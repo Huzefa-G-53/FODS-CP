@@ -1296,6 +1296,26 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
     }
   }
 
+  // --- Topic Drawer Tab Switching ---
+  function switchTopicTab(tabId) {
+    const tabButtons = document.querySelectorAll('#topic-tabs-bar .modal-tab-btn');
+    const tabPanes = document.querySelectorAll('#modal-topic-body .tab-pane');
+
+    tabButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tabId);
+    });
+
+    tabPanes.forEach(pane => {
+      if (pane.id === tabId) {
+        pane.style.display = 'block';
+        pane.classList.add('active');
+      } else {
+        pane.style.display = 'none';
+        pane.classList.remove('active');
+      }
+    });
+  }
+
   // --- Topic Drawer Controls (roadmap.sh style slide-over drawer) ---
   async function openTopicDrawer(topicId) {
     const drawer = document.getElementById('topic-drawer');
