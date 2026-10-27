@@ -1,0 +1,21 @@
+# Environment variables & secrets
+.env
+
+# User progress & local runtime state (never commit personal data)
+data/progress.dat
+data/*.user.dat
+
+# Legacy / extra data directories
+data_og/
+
+# Binaries & compiled artifacts
+*.exe
+server
+*.o
+*.obj
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*~

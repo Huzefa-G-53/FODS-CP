@@ -1,0 +1,746 @@
+=== ROADMAP ===
+id: c
+type: language
+title: C Programming Language
+description: Master systems programming, manual memory management, pointers, and foundational computer architecture through C.
+level: Foundational
+estimatedHours: 60
+icon: terminal
+--- SECTION ---
+id: c-basics
+title: Core Syntax & Foundations
+topics: c-syntax-basics,c-variables,c-control-flow,c-functions
+
+--- SECTION ---
+id: c-memory
+title: Memory & Systems Architecture
+topics: c-pointers-memory,c-structs,c-dynamic-allocation,c-file-io
+
+--- SECTION ---
+id: c-practice
+title: Arrays, Build Tools & Core Data Structures
+topics: c-arrays-strings,c-preprocessor-build,c-linked-structures
+
+
+=== ROADMAP ===
+id: java
+type: language
+title: Java Platform Engineering
+description: Learn enterprise software engineering, robust object-oriented programming, concurrency, and the JVM ecosystem.
+level: Intermediate
+estimatedHours: 75
+icon: coffee
+--- SECTION ---
+id: java-basics
+title: Language Fundamentals
+topics: java-syntax-basics,java-variables,java-control-flow,java-methods
+
+--- SECTION ---
+id: java-oop
+title: Object Orientation & Runtime
+topics: java-classes-oop,java-collections-framework,java-exception-handling,java-multithreading
+
+--- SECTION ---
+id: java-engineering
+title: Generics, Databases & Testing
+topics: java-generics-streams,java-jdbc-database,java-build-testing
+
+
+=== ROADMAP ===
+id: python
+type: language
+title: Python Development
+description: Modern Python for automation, backend APIs, data engineering, and scientific computation.
+level: Beginner to Advanced
+estimatedHours: 50
+icon: code
+--- SECTION ---
+id: python-basics
+title: Fundamentals & Idioms
+topics: python-syntax-basics,python-variables,python-control-flow,python-functions
+
+--- SECTION ---
+id: python-structures
+title: Collections & Packaging
+topics: python-data-structures,python-modules-packages,python-file-io-json,python-virtual-environments
+
+--- SECTION ---
+id: python-practice
+title: Iterators, Testing & APIs
+topics: python-comprehensions-iterators,python-oop-testing,python-http-apis
+
+
+=== ROADMAP ===
+id: ai-ml-engineer
+type: profession
+title: AI & Machine Learning Engineer
+description: A comprehensive track from mathematical foundations and data manipulation to deep neural architectures and production model deployment.
+level: Advanced
+estimatedHours: 180
+icon: cpu
+--- SECTION ---
+id: aiml-foundations
+title: Mathematics, Python & Data Handling
+topics: aiml-math-linear-algebra,aiml-python-scientific-stack,aiml-data-cleaning-feature-engineering
+
+--- SECTION ---
+id: aiml-modeling
+title: Machine Learning & Neural Networks
+topics: aiml-dsa-subroadmap,aiml-ml-pipeline,aiml-supervised-learning,aiml-unsupervised-learning,aiml-deep-learning-neural-nets
+
+--- SECTION ---
+id: aiml-production
+title: Evaluation, Experiments & Production
+topics: aiml-model-evaluation-metrics,aiml-model-deployment-onnx,aiml-experiment-tracking
+
+
+=== ROADMAP ===
+id: backend-developer
+type: profession
+title: Backend Systems Developer
+description: Architect high-performance distributed backends, persistent databases, caching layers, secure authentication, and containerized microservices.
+level: Intermediate to Advanced
+estimatedHours: 160
+icon: server
+--- SECTION ---
+id: backend-foundations
+title: Networking & API Design
+topics: backend-internet-protocols,backend-restful-api-design
+
+--- SECTION ---
+id: backend-data
+title: Persistence, Security & Performance
+topics: backend-dev-subroadmap,backend-relational-databases-sql,backend-authentication-jwt-oauth,backend-caching-redis,backend-transactions-indexing,backend-rate-limiting
+
+--- SECTION ---
+id: backend-quality
+title: Testing, Delivery & Operations
+topics: backend-automated-testing-cicd,backend-docker-containerization,backend-logging-observability
+
+
+=== ROADMAP ===
+id: fullstack-developer
+type: profession
+title: Full-Stack Web Developer
+description: Master end-to-end web engineering from client DOM manipulation and state management to server-side APIs, database modeling, and cloud deployments.
+level: Intermediate
+estimatedHours: 200
+icon: layers
+--- SECTION ---
+id: fullstack-frontend
+title: Web Platform, Browser & UX
+topics: fullstack-web-architecture,fullstack-dom-api,fullstack-state-management,fullstack-accessibility,fullstack-frontend-testing,fullstack-form-validation
+
+--- SECTION ---
+id: fullstack-application
+title: Application Architecture & APIs
+topics: fullstack-dsa-subroadmap,fullstack-backend-integration,fullstack-api-security-cors
+
+--- SECTION ---
+id: fullstack-data-delivery
+title: Data & Deployment
+topics: fullstack-relational-nosql-db,fullstack-cloud-deployment
+
+
+=== ROADMAP ===
+id: dsa
+type: subroadmap
+title: Data Structures & Algorithms Sub-Roadmap
+description: The fundamental building blocks of computer science: asymptotic notation, linear sequences, trees, graphs, hashing, and dynamic programming.
+level: Core
+estimatedHours: 80
+icon: git-commit
+--- SECTION ---
+id: dsa-complexity
+title: Complexity & Linear Structures
+topics: dsa-complexity-arrays,dsa-linked-lists-stacks-queues
+
+--- SECTION ---
+id: dsa-non-linear
+title: Trees, Hashing & Graph Traversal
+topics: dsa-trees-hashing,dsa-graphs-traversal
+
+
+=== ROADMAP ===
+id: machine-learning
+type: subroadmap
+title: Machine Learning Pipeline Sub-Roadmap
+description: Standardized ML workflow from raw ingestion and feature transformations to cross-validation and hyperparameter tuning.
+level: Specialized
+estimatedHours: 70
+icon: activity
+--- SECTION ---
+id: ml-prep
+title: Data Processing & Feature Engineering
+topics: aiml-python-scientific-stack,aiml-data-cleaning-feature-engineering,ml-feature-pipelines
+
+--- SECTION ---
+id: ml-modeling
+title: Model Training & Validation
+topics: aiml-supervised-learning,ml-model-selection,aiml-model-evaluation-metrics
+
+
+=== ROADMAP ===
+id: backend-development
+type: subroadmap
+title: Backend Engineering Sub-Roadmap
+description: In-depth specialization into API gateways, database transactions, caching strategies, and stateless token security.
+level: Specialized
+estimatedHours: 90
+icon: database
+--- SECTION ---
+id: backend-core-apis
+title: API Contracts & Architecture
+topics: backend-internet-protocols,backend-restful-api-design,backend-api-versioning
+
+--- SECTION ---
+id: backend-storage-cache
+title: Data, Transactions & Caching
+topics: backend-relational-databases-sql,backend-transactions-indexing,backend-caching-redis,backend-cache-design
+
+--- SECTION ---
+id: backend-security-ops
+title: Security & Reliability
+topics: backend-authentication-jwt-oauth,backend-authz-secrets,backend-rate-limiting,backend-logging-observability
+
+=== ROADMAP ===
+id: frontend-developer
+type: profession
+title: Frontend Developer
+description: Build accessible, responsive browser applications using HTML, CSS, JavaScript, component frameworks, testing, and performance practices.
+level: Beginner to Advanced
+estimatedHours: 140
+icon: panels-top-left
+--- SECTION ---
+id: frontend-foundations
+title: Web Platform Foundations
+topics: frontend-html-semantics,frontend-css-layout,frontend-javascript-browser
+
+--- SECTION ---
+id: frontend-frameworks
+title: Components and Application State
+topics: frontend-react-components,frontend-state-effects,frontend-routing-data
+
+--- SECTION ---
+id: frontend-quality
+title: Accessibility and Production Quality
+topics: frontend-accessibility,frontend-performance-testing
+
+=== ROADMAP ===
+id: devops-engineer
+type: profession
+title: DevOps Engineer
+description: Automate software delivery and infrastructure using version control, CI/CD, containers, orchestration, infrastructure as code, observability, and reliability practices.
+level: Intermediate to Advanced
+estimatedHours: 170
+icon: workflow
+--- SECTION ---
+id: devops-foundations
+title: Operating Systems and Collaboration
+topics: devops-linux-shell,devops-git-workflows,devops-networking
+
+--- SECTION ---
+id: devops-delivery
+title: Build, Containers and Orchestration
+topics: devops-ci-cd,devops-containers,devops-kubernetes
+
+--- SECTION ---
+id: devops-reliability
+title: Infrastructure and Reliability
+topics: devops-iac,devops-observability
+
+=== ROADMAP ===
+id: cybersecurity-analyst
+type: profession
+title: Cybersecurity Analyst
+description: Learn defensive security fundamentals, asset and identity management, vulnerability assessment, secure development, monitoring, and incident response.
+level: Beginner to Advanced
+estimatedHours: 160
+icon: shield-check
+--- SECTION ---
+id: cyber-foundations
+title: Security Principles and Systems
+topics: cyber-security-basics,cyber-network-security,cyber-identity-access
+
+--- SECTION ---
+id: cyber-defensive-practice
+title: Secure Applications and Vulnerability Management
+topics: cyber-web-vulnerabilities,cyber-vulnerability-management,cyber-secure-development
+
+--- SECTION ---
+id: cyber-operations
+title: Monitoring and Incident Response
+topics: cyber-logging-siem,cyber-incident-response
+
+=== ROADMAP ===
+id: cloud-engineer
+type: profession
+title: Cloud Engineer
+description: Design, provision, secure, and operate cloud workloads using networking, compute, storage, identity, automation, and reliability practices.
+level: Intermediate to Advanced
+estimatedHours: 150
+icon: cloud
+--- SECTION ---
+id: cloud-foundations
+title: Cloud Concepts and Networking
+topics: cloud-service-models,cloud-networking,cloud-iam
+
+--- SECTION ---
+id: cloud-platform
+title: Compute, Storage and Automation
+topics: cloud-compute-storage,cloud-serverless,cloud-iac
+
+--- SECTION ---
+id: cloud-operations
+title: Security, Cost and Reliability
+topics: cloud-observability,cloud-cost-reliability
+
+=== ROADMAP ===
+id: database-engineer
+type: profession
+title: Database Engineer
+description: Design reliable data models and operate relational and non-relational databases with query tuning, transactions, migrations, backup, and access controls.
+level: Intermediate to Advanced
+estimatedHours: 145
+icon: database
+--- SECTION ---
+id: database-modeling
+title: Data Modeling and SQL
+topics: db-modeling-normalization,db-sql-querying,db-transactions
+
+--- SECTION ---
+id: database-performance
+title: Indexes and Database Operations
+topics: db-indexes-query-plans,db-migrations,db-backup-recovery
+
+--- SECTION ---
+id: database-specialization
+title: NoSQL and Data Access Security
+topics: db-nosql-modeling,db-security-access
+
+=== ROADMAP ===
+id: android-developer
+type: profession
+title: Android Developer
+description: Build Android applications using Kotlin, Android platform components, Jetpack libraries, persistence, testing, and release practices.
+level: Beginner to Advanced
+estimatedHours: 150
+icon: smartphone
+--- SECTION ---
+id: android-kotlin
+title: Kotlin and Android Foundations
+topics: android-kotlin-language,android-studio-project,android-compose-ui
+
+--- SECTION ---
+id: android-architecture
+title: App Architecture and Data
+topics: android-lifecycle-navigation,android-coroutines,android-persistence
+
+--- SECTION ---
+id: android-quality
+title: Networking, Testing and Release
+topics: android-networking,android-testing-release
+
+=== ROADMAP ===
+id: ios-developer
+type: profession
+title: iOS Developer
+description: Develop native Apple-platform applications with Swift, SwiftUI, application lifecycle management, persistence, networking, testing, and distribution.
+level: Beginner to Advanced
+estimatedHours: 150
+icon: smartphone
+--- SECTION ---
+id: ios-swift
+title: Swift and UI Foundations
+topics: ios-swift-language,ios-xcode-project,ios-swiftui
+
+--- SECTION ---
+id: ios-application
+title: Application Data and Concurrency
+topics: ios-navigation-state,ios-concurrency,ios-persistence-networking
+
+--- SECTION ---
+id: ios-quality
+title: Testing and Distribution
+topics: ios-testing,ios-release-privacy
+
+=== ROADMAP ===
+id: qa-test-automation
+type: profession
+title: QA and Test Automation Engineer
+description: Design test strategies, automate unit/API/browser tests, manage test data, integrate checks into CI, and report product risk clearly.
+level: Beginner to Advanced
+estimatedHours: 135
+icon: test-tube
+--- SECTION ---
+id: qa-fundamentals
+title: Testing Foundations
+topics: qa-testing-principles,qa-test-pyramid,qa-bug-reporting
+
+--- SECTION ---
+id: qa-automation
+title: Automation Frameworks
+topics: qa-pytest-unit,qa-api-testing,qa-browser-testing
+
+--- SECTION ---
+id: qa-delivery
+title: CI and Quality Engineering
+topics: qa-ci-quality-gates,qa-nonfunctional
+
+=== ROADMAP ===
+id: data-engineer
+type: profession
+title: Data Engineer
+description: Build dependable data ingestion, transformation, storage, orchestration, and quality pipelines for analytics and machine learning workloads.
+level: Intermediate to Advanced
+estimatedHours: 165
+icon: database-zap
+--- SECTION ---
+id: data-eng-foundations
+title: Data Modeling and Ingestion
+topics: data-eng-sql-modeling,data-eng-ingestion,data-eng-python-pipelines
+
+--- SECTION ---
+id: data-eng-processing
+title: Transformation and Orchestration
+topics: data-eng-spark,data-eng-orchestration,data-eng-transform-dbt
+
+--- SECTION ---
+id: data-eng-production
+title: Quality and Production Operations
+topics: data-eng-data-quality,data-eng-storage-lakehouse
+
+=== ROADMAP ===
+id: data-analyst
+type: profession
+title: Data Analyst
+description: Turn raw data into defensible insights using SQL, statistics, data cleaning, visualization, dashboards, and clear communication.
+level: Beginner to Advanced
+estimatedHours: 125
+icon: chart-no-axes-combined
+--- SECTION ---
+id: analyst-foundations
+title: Data and Query Foundations
+topics: analyst-spreadsheets,analyst-sql,analyst-statistics
+
+--- SECTION ---
+id: analyst-tools
+title: Analysis and Visualization
+topics: analyst-python-pandas,analyst-data-viz,analyst-dashboarding
+
+--- SECTION ---
+id: analyst-decision
+title: Experimentation and Communication
+topics: analyst-hypothesis-testing,analyst-storytelling
+
+=== ROADMAP ===
+id: computer-science-fundamentals
+type: skill
+title: Computer Science Fundamentals
+description: Build a durable foundation in algorithms, operating systems, networking, databases, architecture, and software engineering concepts.
+level: Foundational to Intermediate
+estimatedHours: 160
+icon: binary
+--- SECTION ---
+id: cs-algorithms
+title: Algorithms and Data Structures
+topics: cs-complexity,cs-linear-structures,cs-trees-graphs
+
+--- SECTION ---
+id: cs-systems
+title: Systems and Networking
+topics: cs-operating-systems,cs-computer-architecture,cs-network-protocols
+
+--- SECTION ---
+id: cs-data-engineering
+title: Databases and Software Engineering
+topics: cs-database-principles,cs-software-design
+
+=== ROADMAP ===
+id: game-developer
+type: profession
+title: Game Developer
+description: Learn real-time game programming, engine workflows, input, scenes, physics, animation, optimization, and gameplay testing.
+level: Beginner to Advanced
+estimatedHours: 150
+icon: gamepad-2
+--- SECTION ---
+id: game-foundations
+title: Programming and Engine Foundations
+topics: game-programming-basics,game-engine-workflow,game-input-ui
+
+--- SECTION ---
+id: gameplay-systems
+title: Gameplay and Simulation
+topics: game-physics-collision,game-animation-state,game-ai-pathfinding
+
+--- SECTION ---
+id: game-quality
+title: Assets, Optimization and Delivery
+topics: game-assets-pipeline,game-profiling-testing
+
+
+
+=== ROADMAP ===
+id: machine-learning-engineer
+type: profession
+title: Machine Learning Engineer
+description: Build, evaluate, and deploy predictive models using sound data preparation, statistical validation, feature engineering, and model-serving practices.
+level: Intermediate to Advanced
+estimatedHours: 180
+icon: brain-circuit
+
+--- SECTION ---
+id: ml-eng-foundations
+title: Data and Modeling Foundations
+topics: mleng-problem-framing,mleng-data-preparation
+
+--- SECTION ---
+id: ml-eng-models
+title: Training and Evaluation
+topics: mleng-model-training,mleng-evaluation
+
+--- SECTION ---
+id: ml-eng-production
+title: Deployment and Monitoring
+topics: mleng-serving,mleng-monitoring
+
+=== ROADMAP ===
+id: ai-engineer
+type: profession
+title: AI Engineer
+description: Integrate machine-learning models and AI services into reliable applications, with attention to evaluation, tool integration, privacy, latency, and cost.
+level: Intermediate to Advanced
+estimatedHours: 150
+icon: bot
+
+--- SECTION ---
+id: ai-eng-foundations
+title: AI Application Foundations
+topics: aieng-model-selection,aieng-inference-api
+
+--- SECTION ---
+id: ai-eng-integration
+title: Application Integration
+topics: aieng-structured-output,aieng-tool-use
+
+--- SECTION ---
+id: ai-eng-quality
+title: Evaluation and Operations
+topics: aieng-evaluation,aieng-security-cost
+
+=== ROADMAP ===
+id: llm-engineer
+type: profession
+title: LLM Engineer
+description: Develop applications powered by large language models, including prompt design, retrieval-augmented generation, evaluation, and safe production deployment.
+level: Intermediate to Advanced
+estimatedHours: 160
+icon: messages-square
+
+--- SECTION ---
+id: llm-foundations
+title: LLM Fundamentals
+topics: llme-tokenization-context,llme-prompt-design
+
+--- SECTION ---
+id: llm-retrieval
+title: Retrieval and Adaptation
+topics: llme-embeddings-retrieval,llme-rag-pipeline
+
+--- SECTION ---
+id: llm-production
+title: Evaluation and Serving
+topics: llme-evaluation,llme-serving-safety
+
+=== ROADMAP ===
+id: mlops-engineer
+type: profession
+title: MLOps Engineer
+description: Operationalize machine-learning workflows through reproducible pipelines, experiment tracking, model registries, deployment automation, and monitoring.
+level: Intermediate to Advanced
+estimatedHours: 170
+icon: workflow
+
+--- SECTION ---
+id: mlops-reproducibility
+title: Reproducible ML
+topics: mlops-data-versioning,mlops-experiment-tracking
+
+--- SECTION ---
+id: mlops-pipelines
+title: Pipelines and Releases
+topics: mlops-training-pipelines,mlops-model-registry
+
+--- SECTION ---
+id: mlops-operations
+title: Serving and Observability
+topics: mlops-deployment,mlops-drift-monitoring
+
+=== ROADMAP ===
+id: site-reliability-engineer
+type: profession
+title: Site Reliability Engineer (SRE)
+description: Improve service reliability through service-level objectives, observability, incident response, capacity planning, and automation that reduces operational toil.
+level: Intermediate to Advanced
+estimatedHours: 145
+icon: activity
+
+--- SECTION ---
+id: sre-foundations
+title: Reliability Foundations
+topics: sre-sli-slo,sre-error-budgets
+
+--- SECTION ---
+id: sre-observability
+title: Observability and Incidents
+topics: sre-telemetry,sre-incident-response
+
+--- SECTION ---
+id: sre-resilience
+title: Resilience and Capacity
+topics: sre-capacity-load,sre-automation-toil
+
+=== ROADMAP ===
+id: network-engineer
+type: profession
+title: Network Engineer
+description: Understand how networks are addressed, routed, secured, monitored, and troubleshot across local networks, enterprise environments, and cloud systems.
+level: Foundational to Intermediate
+estimatedHours: 125
+icon: network
+
+--- SECTION ---
+id: net-foundations
+title: Network Fundamentals
+topics: net-models-addressing,net-switching-routing
+
+--- SECTION ---
+id: net-services
+title: Core Network Services
+topics: net-dns-dhcp,net-transport-troubleshooting
+
+--- SECTION ---
+id: net-security
+title: Network Security and Operations
+topics: net-firewalls-segmentation,net-monitoring-automation
+
+=== ROADMAP ===
+id: systems-programmer
+type: profession
+title: Systems Programmer
+description: Develop software close to the operating system using memory-aware programming, process and thread APIs, file descriptors, system calls, and performance tools.
+level: Intermediate to Advanced
+estimatedHours: 170
+icon: cpu
+
+--- SECTION ---
+id: sysprog-foundations
+title: Runtime and Memory
+topics: sysprog-process-memory,sysprog-pointers-ownership
+
+--- SECTION ---
+id: sysprog-os
+title: Operating System Interfaces
+topics: sysprog-files-syscalls,sysprog-concurrency
+
+--- SECTION ---
+id: sysprog-quality
+title: Performance and Safety
+topics: sysprog-debugging,sysprog-build-portability
+
+=== ROADMAP ===
+id: embedded-systems-engineer
+type: profession
+title: Embedded Systems Engineer
+description: Build firmware for resource-constrained devices with microcontroller fundamentals, peripheral interfaces, real-time constraints, debugging, and dependable testing.
+level: Intermediate to Advanced
+estimatedHours: 175
+icon: microchip
+
+--- SECTION ---
+id: embedded-foundations
+title: Hardware and Firmware Foundations
+topics: emb-mcu-architecture,emb-c-firmware
+
+--- SECTION ---
+id: embedded-io
+title: Peripherals and Real-Time Systems
+topics: emb-peripherals-buses,emb-rtos-scheduling
+
+--- SECTION ---
+id: embedded-quality
+title: Debugging and Reliability
+topics: emb-debug-testing,emb-power-security
+
+=== ROADMAP ===
+id: software-architect
+type: profession
+title: Software Architect
+description: Design systems by translating requirements into architecture decisions, component boundaries, interfaces, data flows, and operational trade-offs.
+level: Advanced
+estimatedHours: 130
+icon: blocks
+
+--- SECTION ---
+id: arch-foundations
+title: Requirements and Boundaries
+topics: arch-quality-attributes,arch-domain-boundaries
+
+--- SECTION ---
+id: arch-design
+title: Architecture and Communication
+topics: arch-styles-patterns,arch-api-contracts
+
+--- SECTION ---
+id: arch-governance
+title: Decisions and Evolution
+topics: arch-adrs-diagrams,arch-security-resilience
+
+=== ROADMAP ===
+id: data-scientist
+type: profession
+title: Data Scientist
+description: Use statistics, experimental reasoning, programming, and machine learning to investigate questions and communicate evidence-backed conclusions.
+level: Intermediate to Advanced
+estimatedHours: 165
+icon: chart-no-axes-combined
+
+--- SECTION ---
+id: ds-foundations
+title: Statistical Foundations
+topics: ds-probability-inference,ds-experiment-design
+
+--- SECTION ---
+id: ds-analysis
+title: Data Analysis and Modeling
+topics: ds-exploration-features,ds-model-selection
+
+--- SECTION ---
+id: ds-communication
+title: Interpretation and Reproducibility
+topics: ds-uncertainty-communication,ds-reproducible-work
+
+=== ROADMAP ===
+id: devsecops-engineer
+type: profession
+title: DevSecOps Engineer
+description: Integrate security checks into software delivery through threat modeling, dependency and secret scanning, infrastructure controls, and continuous verification.
+level: Intermediate to Advanced
+estimatedHours: 145
+icon: shield-check
+
+--- SECTION ---
+id: devsecops-foundations
+title: Secure Delivery Foundations
+topics: dso-threat-modeling,dso-secure-pipeline
+
+--- SECTION ---
+id: devsecops-controls
+title: Code and Dependency Security
+topics: dso-sast-dependencies,dso-secrets-containers
+
+--- SECTION ---
+id: devsecops-operations
+title: Verification and Response
+topics: dso-iac-policy,dso-vulnerability-response

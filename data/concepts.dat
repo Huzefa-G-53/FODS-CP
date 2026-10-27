@@ -1,0 +1,242 @@
+=== CONCEPT ===
+id: variables
+name: Variables & Data Types
+description: Fundamental concepts of memory storage, type systems (static vs dynamic), scopes, and mutation across languages.
+topics: c-variables,java-variables,python-variables
+
+=== CONCEPT ===
+id: control-flow
+name: Control Flow Structures
+description: Conditional branching (if/else/switch) and iterative loops (while/for) guiding runtime execution order.
+topics: c-control-flow,java-control-flow,python-control-flow
+
+=== CONCEPT ===
+id: functions
+name: Functions & Subroutines
+description: Modular code reusability, parameter passing mechanisms (by-value vs by-reference), return values, and call stacks.
+topics: c-functions,java-methods,python-functions
+
+=== CONCEPT ===
+id: data-structures
+name: Structured Data Collections
+description: Grouping compound data via records, classes, collections, or dictionary maps.
+topics: c-structs,java-collections-framework,python-data-structures
+
+=== CONCEPT ===
+id: persistence
+name: Data Persistence & Databases
+description: Techniques for storing and querying structured data permanently across server restarts.
+topics: backend-relational-databases-sql,fullstack-relational-nosql-db
+
+=== CONCEPT ===
+id: networking
+name: Network Communication & HTTP
+description: Client-server architecture, transport protocols, request/response cycles, and payload formatting.
+topics: backend-internet-protocols,fullstack-web-architecture
+
+=== CONCEPT ===
+id: syntax-compilation
+name: Syntax & Program Execution
+description: Source-code structure, compilation or interpretation, entry points, and the toolchain/runtime that executes a program.
+topics: c-syntax-basics,java-syntax-basics,python-syntax-basics
+
+=== CONCEPT ===
+id: memory-management
+name: Memory & Resource Management
+description: How programs allocate, reference, release, and safely manage memory or other resources.
+topics: c-pointers-memory,c-dynamic-allocation,java-classes-oop,python-data-structures
+
+=== CONCEPT ===
+id: object-oriented-programming
+name: Object-Oriented Programming
+description: Encapsulation, abstraction, inheritance, polymorphism, and designing cohesive types with explicit responsibilities.
+topics: java-classes-oop,python-functions
+
+=== CONCEPT ===
+id: error-handling
+name: Errors & Exception Handling
+description: Detecting failures, propagating errors, validating assumptions, and making failure behavior explicit and testable.
+topics: java-exception-handling,python-functions,backend-restful-api-design
+
+=== CONCEPT ===
+id: algorithms-complexity
+name: Algorithms & Complexity
+description: Choosing algorithms and data structures using time and space complexity, correctness, and workload characteristics.
+topics: c-structs,java-collections-framework,python-data-structures,aiml-dsa-subroadmap,fullstack-dsa-subroadmap
+
+=== CONCEPT ===
+id: api-design
+name: API Design & Contracts
+description: Defining stable interfaces, request/response schemas, status codes, validation, and compatibility expectations.
+topics: backend-restful-api-design,fullstack-backend-integration
+
+=== CONCEPT ===
+id: security-authentication
+name: Application Security & Authentication
+description: Identity, authentication, authorization, secrets management, cross-origin policy, and defense-in-depth practices.
+topics: backend-authentication-jwt-oauth,fullstack-api-security-cors
+
+=== CONCEPT ===
+id: testing-delivery
+name: Testing & Continuous Delivery
+description: Automated checks, repeatable builds, deployment pipelines, and feedback loops that reduce release risk.
+topics: backend-automated-testing-cicd,backend-docker-containerization,fullstack-cloud-deployment
+
+=== CONCEPT ===
+id: data-science-workflow
+name: Data Analysis & Model Workflow
+description: Preparing data, building reproducible transformations, training models, measuring performance, and shipping artifacts.
+topics: aiml-python-scientific-stack,aiml-ml-pipeline,aiml-supervised-learning,aiml-model-evaluation-metrics
+
+=== CONCEPT ===
+id: deployment-observability
+name: Deployment & Operations
+description: Packaging applications, configuring environments, serving traffic, and monitoring deployed software.
+topics: aiml-model-deployment-onnx,backend-docker-containerization,fullstack-cloud-deployment
+
+
+=== CONCEPT ===
+id: arrays-collections
+name: Arrays & Collection Processing
+description: Sequences and collections store multiple values and support iteration, indexing, filtering, and transformation.
+topics: c-arrays-strings,java-collections-framework,python-data-structures,python-comprehensions-iterators
+
+=== CONCEPT ===
+id: testing-quality
+name: Automated Testing & Quality
+description: Tests express expected behavior across normal paths, edge cases, and failure conditions.
+topics: java-build-testing,python-oop-testing,backend-automated-testing-cicd,fullstack-frontend-testing
+
+=== CONCEPT ===
+id: database-transactions
+name: Database Transactions & Query Optimization
+description: Transactions protect multi-step changes while indexes and query plans guide measured performance tuning.
+topics: java-jdbc-database,backend-transactions-indexing,backend-relational-databases-sql,fullstack-relational-nosql-db
+
+=== CONCEPT ===
+id: data-preparation
+name: Data Preparation & Feature Engineering
+description: Reliable ML depends on consistent preprocessing, leakage prevention, feature transformations, and validation-aware pipelines.
+topics: aiml-data-cleaning-feature-engineering,ml-feature-pipelines,aiml-python-scientific-stack
+
+=== CONCEPT ===
+id: observability-resilience
+name: Observability & Service Resilience
+description: Structured logs, metrics, timeouts, retries, and rate limits help services remain diagnosable and robust under failure.
+topics: backend-logging-observability,backend-rate-limiting,backend-caching-redis
+
+=== CONCEPT ===
+id: http-networking
+name: HTTP and Network Communication
+description: Request/response protocols, endpoints, client-server boundaries, and network failure handling.
+topics: backend-internet-protocols,fullstack-web-architecture,frontend-javascript-browser,devops-networking,cs-network-protocols,android-networking,ios-persistence-networking
+
+=== CONCEPT ===
+id: sql-data-modeling
+name: SQL and Relational Data Modeling
+description: Tables, keys, joins, constraints, and query patterns for persistent structured data.
+topics: backend-relational-databases-sql,fullstack-relational-nosql-db,db-modeling-normalization,db-sql-querying,analyst-sql,data-eng-sql-modeling,cs-database-principles
+
+=== CONCEPT ===
+id: automated-testing
+name: Automated Software Testing
+description: Repeatable checks for application behavior at unit, integration, API, browser, and delivery stages.
+topics: backend-automated-testing-cicd,fullstack-frontend-testing,frontend-performance-testing,qa-pytest-unit,qa-api-testing,qa-browser-testing,qa-ci-quality-gates,android-testing-release,ios-testing
+
+=== CONCEPT ===
+id: git-collaboration
+name: Version Control and Collaboration
+description: Tracking changes, reviewing work, and integrating software through version control.
+topics: devops-git-workflows,qa-ci-quality-gates
+
+=== CONCEPT ===
+id: security-fundamentals
+name: Security and Least Privilege
+description: Threat awareness, scoped permissions, input handling, secure configuration, and verification.
+topics: backend-authentication-jwt-oauth,cyber-security-basics,cyber-identity-access,cyber-secure-development,db-security-access,cloud-iam
+
+=== CONCEPT ===
+id: cloud-deployment
+name: Cloud Deployment and Operations
+description: Deploying workloads with configuration, observability, reliability, and controlled infrastructure changes.
+topics: backend-docker-containerization,backend-logging-observability,fullstack-cloud-deployment,devops-containers,devops-iac,cloud-compute-storage,cloud-observability
+
+=== CONCEPT ===
+id: data-analysis
+name: Data Analysis and Transformation
+description: Cleaning, transforming, validating, and interpreting structured data for decisions and downstream systems.
+topics: aiml-data-cleaning-feature-engineering,aiml-python-scientific-stack,analyst-python-pandas,analyst-statistics,data-eng-python-pipelines,data-eng-data-quality
+
+
+
+=== CONCEPT ===
+id: model-evaluation
+name: Model Evaluation and Validation
+description: Validation design, appropriate metrics, error analysis, and monitoring connect data science, machine learning, and production model workflows
+topics: mleng-evaluation,ds-model-selection,mlops-drift-monitoring
+
+=== CONCEPT ===
+id: llm-app-quality
+name: LLM Application Quality
+description: Prompt and retrieval systems need versioned evaluations, grounded evidence, and regression tests rather than subjective spot checks
+topics: llme-evaluation,aieng-evaluation,llme-rag-pipeline
+
+=== CONCEPT ===
+id: ml-production
+name: Production ML Lifecycle
+description: Experiment tracking, model serving, release governance, and production monitoring form one connected model lifecycle
+topics: mleng-serving,mlops-experiment-tracking,mlops-model-registry,mleng-monitoring
+
+=== CONCEPT ===
+id: observability
+name: Observability and Incident Response
+description: Telemetry, alerting, incident handling, and follow-up actions connect reliability engineering and application operations
+topics: sre-telemetry,sre-incident-response,mleng-monitoring
+
+=== CONCEPT ===
+id: secure-delivery
+name: Secure Software Delivery
+description: Threat modeling, least-privilege CI/CD, dependency controls, and release verification reduce software supply-chain risk
+topics: dso-threat-modeling,dso-secure-pipeline,dso-sast-dependencies
+
+=== CONCEPT ===
+id: network-security
+name: Network Security Boundaries
+description: Segmentation, identity-aware access, and threat modeling help protect services and infrastructure
+topics: net-firewalls-segmentation,dso-threat-modeling,arch-security-resilience
+
+=== CONCEPT ===
+id: native-memory-safety
+name: Native Memory Safety
+description: Memory ownership, lifetime rules, debugging, and resource constraints matter in systems and embedded programming
+topics: sysprog-pointers-ownership,sysprog-debugging,emb-c-firmware
+
+=== CONCEPT ===
+id: system-reliability
+name: Reliability and Failure Design
+description: Capacity, deadlines, graceful degradation, and incident learning apply across distributed and embedded systems
+topics: sre-capacity-load,arch-security-resilience,emb-rtos-scheduling
+
+=== CONCEPT ===
+id: architecture-decisions
+name: Architecture Decision Making
+description: Quality attributes, component boundaries, API contracts, and decision records help teams reason about system design
+topics: arch-quality-attributes,arch-domain-boundaries,arch-adrs-diagrams
+
+=== CONCEPT ===
+id: statistical-reasoning
+name: Statistical Reasoning
+description: Sampling, experimental design, model validation, and uncertainty communication underpin defensible data-driven decisions
+topics: ds-probability-inference,ds-experiment-design,mleng-evaluation
+
+=== CONCEPT ===
+id: reproducible-ml
+name: Reproducible ML
+description: Data lineage, experiment tracking, and repeatable analysis enable trustworthy model comparisons
+topics: mlops-data-versioning,mlops-experiment-tracking,ds-reproducible-work
+
+=== CONCEPT ===
+id: least-privilege
+name: Least Privilege and Trust Boundaries
+description: Access should be limited to the minimum resources and actions required, across network, pipeline, and AI tool boundaries
+topics: net-firewalls-segmentation,dso-secure-pipeline,aieng-tool-use

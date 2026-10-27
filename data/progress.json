@@ -1,0 +1,20 @@
+{
+	"topics":	{
+		"c-syntax-basics":	{
+			"status":	"Completed",
+			"updatedAt":	"2026-09-15T00:00:00Z"
+		},
+		"c-variables":	{
+			"status":	"Completed",
+			"updatedAt":	"2026-09-15T12:43:38Z"
+		},
+		"java-variables":	{
+			"status":	"Familiar",
+			"updatedAt":	"2026-09-15T12:43:38Z"
+		},
+		"python-variables":	{
+			"status":	"Familiar",
+			"updatedAt":	"2026-09-15T12:43:38Z"
+		}
+	}
+}

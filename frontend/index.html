@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathForge - Developer Learning Roadmaps</title>
+  <meta name="description" content="Community-curated developer learning roadmaps, step-by-step guides, and prerequisite paths.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Global Top Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="#/" class="brand-link" id="brand-logo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">PathForge</span>
+        </div>
+      </a>
+
+      <!-- Roadmaps Menu Dropdown -->
+      <div class="nav-dropdown" id="roadmaps-dropdown">
+        <button class="nav-btn dropdown-toggle" id="btn-roadmaps-menu" aria-haspopup="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg>
+          <span>Roadmaps</span>
+          <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="dropdown-menu" id="roadmaps-menu-list">
+          <div class="dropdown-group-title">Careers</div>
+          <a href="#/roadmap/ai-ml-engineer" class="dropdown-item">
+            <span class="dot dot-aiml"></span> AI & ML Engineer
+          </a>
+          <a href="#/roadmap/backend-developer" class="dropdown-item">
+            <span class="dot dot-backend"></span> Backend Developer
+          </a>
+          <a href="#/roadmap/fullstack-developer" class="dropdown-item">
+            <span class="dot dot-fullstack"></span> Full-Stack Developer
+          </a>
+          
+          <div class="dropdown-group-title">Languages</div>
+          <a href="#/roadmap/c" class="dropdown-item">
+            <span class="dot dot-c"></span> C Programming
+          </a>
+          <a href="#/roadmap/java" class="dropdown-item">
+            <span class="dot dot-java"></span> Java
+          </a>
+          <a href="#/roadmap/python" class="dropdown-item">
+            <span class="dot dot-python"></span> Python
+          </a>
+
+          <div class="dropdown-group-title">Sub-Roadmaps</div>
+          <a href="#/roadmap/dsa" class="dropdown-item">
+            <span class="dot dot-dsa"></span> Data Structures & Algorithms
+          </a>
+          <a href="#/roadmap/machine-learning" class="dropdown-item">
+            <span class="dot dot-ml"></span> Machine Learning Pipeline
+          </a>
+          <a href="#/roadmap/backend-development" class="dropdown-item">
+            <span class="dot dot-be"></span> Backend Architecture
+          </a>
+        </div>
+      </div>
+
+      <nav class="header-nav">
+        <a href="#/" class="nav-link" id="nav-dashboard">Dashboard</a>
+        <a href="#/assessment" class="nav-link" id="nav-assessment">Assessment</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <!-- Path Finder Button -->
+      <button class="btn btn-outline btn-sm" id="btn-open-pathfinder" title="Find learning path between two topics">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a4.5 4.5 0 0 0 0-9H7a4 4 0 0 1 0-8h11"/><circle cx="18" cy="5" r="3"/></svg>
+        <span>Path Finder</span>
+      </button>
+
+      <!-- Global Progress Pill -->
+      <div class="global-progress-pill" id="global-progress-pill" title="Overall progress">
+        <div class="progress-ring-mini">
+          <svg width="22" height="22">
+            <circle class="ring-bg" cx="11" cy="11" r="8"/>
+            <circle class="ring-fill" id="global-progress-circle" cx="11" cy="11" r="8"/>
+          </svg>
+        </div>
+        <span class="progress-text" id="global-progress-text">0% Done</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs Bar -->
+  <div class="breadcrumb-bar" id="breadcrumb-bar">
+    <div class="breadcrumb-container" id="breadcrumb-container">
+      <a href="#/" class="crumb-link">Home</a>
+    </div>
+  </div>
+
+  <!-- Main View -->
+  <main class="app-main" id="app-view">
+    <!-- Rendered dynamically by app.js -->
+  </main>
+
+  <!-- Topic Detail Modal Dialog -->
+  <div class="modal-backdrop" id="topic-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-meta-badges">
+            <span class="badge" id="modal-roadmap-badge">Track</span>
+            <span class="badge badge-difficulty" id="modal-difficulty-badge">Beginner</span>
+            <span class="badge badge-time" id="modal-time-badge">45m</span>
+          </div>
+          <h2 class="modal-title" id="modal-topic-title">Topic Title</h2>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Clean Tabbed Bar -->
+      <div class="modal-tabs-bar" id="topic-tabs-bar">
+        <button class="modal-tab-btn active" data-tab="tab-overview">Overview & Guide</button>
+        <button class="modal-tab-btn" data-tab="tab-code">Code & Syntax</button>
+        <button class="modal-tab-btn" data-tab="tab-resources">Pitfalls & References</button>
+      </div>
+
+      <div class="modal-body" id="modal-topic-body">
+        <!-- Status Selector -->
+        <div class="modal-status-bar">
+          <span class="status-label">Your Learning Status:</span>
+          <div class="status-btn-group" id="modal-status-group">
+            <button class="status-btn" data-status="Not Started">Not Started</button>
+            <button class="status-btn" data-status="In Progress">In Progress</button>
+            <button class="status-btn status-completed" data-status="Completed">Completed</button>
+          </div>
+        </div>
+
+        <!-- Subroadmap Link Banner if applicable -->
+        <div class="subroadmap-callout" id="modal-subroadmap-callout" style="display:none;">
+          <div class="callout-info">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <div>
+              <strong>Specialized Sub-Roadmap Available</strong>
+              <p id="modal-subroadmap-desc">Deep-dive into the dedicated standalone curriculum module for this topic.</p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" id="modal-btn-view-subroadmap">Open Sub-Roadmap ↗</button>
+        </div>
+
+        <!-- Tab 1: Overview & Guide -->
+        <div class="tab-pane active" id="tab-overview">
+          <!-- Prerequisites Section -->
+          <div class="topic-section">
+            <h3 class="section-heading">Prerequisites</h3>
+            <div class="prereqs-tag-list" id="modal-prereqs-list">
+              <span class="muted-text">None required (Foundational topic)</span>
+            </div>
+          </div>
+
+          <!-- Objectives Checklist -->
+          <div class="topic-section">
+            <h3 class="section-heading">Learning Objectives</h3>
+            <ul class="objectives-list" id="modal-objectives-list"></ul>
+          </div>
+
+          <!-- Explanation -->
+          <div class="topic-section">
+            <h3 class="section-heading">Concept Explanation</h3>
+            <div class="markdown-explanation" id="modal-explanation-content"></div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Code & Syntax -->
+        <div class="tab-pane" id="tab-code" style="display:none;">
+          <div class="topic-section">
+            <div class="code-header">
+              <div class="code-title-group">
+                <span class="code-lang-pill">Code Example</span>
+              </div>
+              <button class="btn btn-outline btn-xs" id="btn-copy-code">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy Code</span>
+              </button>
+            </div>
+            <pre class="code-block"><code id="modal-code-snippet"></code></pre>
+          </div>
+        </div>
+
+        <!-- Tab 3: Pitfalls & References -->
+        <div class="tab-pane" id="tab-resources" style="display:none;">
+          <!-- Common Pitfalls -->
+          <div class="topic-section">
+            <h3 class="section-heading">Common Pitfalls & Anti-Patterns</h3>
+            <ul class="pitfalls-list" id="modal-pitfalls-list"></ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="topic-section">
+            <h3 class="section-heading">Curated References & Guides</h3>
+            <div class="resources-grid" id="modal-resources-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-footer-close">Close</button>
+        <button class="btn btn-outline" id="modal-btn-find-path">Find Path Here</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Redesigned Path Finder Modal Dialog -->
+  <div class="modal-backdrop" id="pathfinder-modal" aria-hidden="true">
+    <div class="modal-dialog modal-pathfinder">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-meta-badges">
+            <span class="badge badge-accent">Graph Pathfinding</span>
+          </div>
+          <h2 class="modal-title">Learning Path Finder</h2>
+          <p class="modal-subtitle">Compute the shortest prerequisite pathway between any two concepts.</p>
+        </div>
+        <button class="modal-close-btn" id="pathfinder-close-btn" aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Journey Input Pods -->
+        <div class="pathfinder-journey-container">
+          <!-- Starting Topic Pod -->
+          <div class="journey-pod">
+            <div class="journey-pod-header">
+              <span class="journey-indicator start-indicator"></span>
+              <label for="path-start-select" class="journey-label">Starting Topic</label>
+            </div>
+            <div class="select-wrapper">
+              <select id="path-start-select" class="form-control journey-select"></select>
+            </div>
+          </div>
+
+          <!-- Interchange Swap Button -->
+          <div class="journey-swap-divider">
+            <div class="divider-line"></div>
+            <button class="journey-swap-btn" id="btn-swap-path" title="Swap start and destination">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"/></svg>
+            </button>
+            <div class="divider-line"></div>
+          </div>
+
+          <!-- Destination Topic Pod -->
+          <div class="journey-pod">
+            <div class="journey-pod-header">
+              <span class="journey-indicator end-indicator"></span>
+              <label for="path-end-select" class="journey-label">Destination Topic</label>
+            </div>
+            <div class="select-wrapper">
+              <select id="path-end-select" class="form-control journey-select"></select>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-block btn-calc-path" id="btn-execute-pathfind">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          <span>Calculate Learning Pathway</span>
+        </button>
+
+        <!-- Initial Guidance Placeholder -->
+        <div class="pathfinder-initial-hint" id="pathfinder-initial-hint">
+          <div class="hint-icon">🧭</div>
+          <p class="hint-text">Select a starting topic and your learning destination above, then click <strong>Calculate Learning Pathway</strong> to view the prerequisite sequence.</p>
+        </div>
+
+        <!-- Path Results Flow -->
+        <div class="pathfinder-results" id="pathfinder-results" style="display:none;">
+          <div class="path-results-summary-bar">
+            <div class="summary-left">
+              <span class="path-stat-badge" id="path-hops-count">0 Steps</span>
+              <span class="path-stat-info" id="path-status-info">Path Discovered</span>
+            </div>
+          </div>
+          <div class="path-journey-stepper" id="path-steps-flow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Hub -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
