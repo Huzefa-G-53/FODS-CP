@@ -35,38 +35,7 @@
           <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="dropdown-menu" id="roadmaps-menu-list">
-          <div class="dropdown-group-title">Careers</div>
-          <a href="#/roadmap/ai-ml-engineer" class="dropdown-item">
-            <span class="dot dot-aiml"></span> AI & ML Engineer
-          </a>
-          <a href="#/roadmap/backend-developer" class="dropdown-item">
-            <span class="dot dot-backend"></span> Backend Developer
-          </a>
-          <a href="#/roadmap/fullstack-developer" class="dropdown-item">
-            <span class="dot dot-fullstack"></span> Full-Stack Developer
-          </a>
-          
-          <div class="dropdown-group-title">Languages</div>
-          <a href="#/roadmap/c" class="dropdown-item">
-            <span class="dot dot-c"></span> C Programming
-          </a>
-          <a href="#/roadmap/java" class="dropdown-item">
-            <span class="dot dot-java"></span> Java
-          </a>
-          <a href="#/roadmap/python" class="dropdown-item">
-            <span class="dot dot-python"></span> Python
-          </a>
-
-          <div class="dropdown-group-title">Sub-Roadmaps</div>
-          <a href="#/roadmap/dsa" class="dropdown-item">
-            <span class="dot dot-dsa"></span> Data Structures & Algorithms
-          </a>
-          <a href="#/roadmap/machine-learning" class="dropdown-item">
-            <span class="dot dot-ml"></span> Machine Learning Pipeline
-          </a>
-          <a href="#/roadmap/backend-development" class="dropdown-item">
-            <span class="dot dot-be"></span> Backend Architecture
-          </a>
+          <!-- Dynamically populated from API (all 32 roadmaps grouped by category) -->
         </div>
       </div>
 
@@ -108,9 +77,10 @@
     <!-- Rendered dynamically by app.js -->
   </main>
 
-  <!-- Topic Detail Modal Dialog -->
-  <div class="modal-backdrop" id="topic-modal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+  <!-- Slide-Over Topic Detail Drawer (roadmap.sh style right-side drawer) -->
+  <div class="drawer-backdrop" id="topic-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="topic-drawer" id="topic-drawer" aria-hidden="true" role="dialog" aria-labelledby="modal-topic-title">
+    <div class="drawer-content">
       <div class="modal-header">
         <div class="modal-title-group">
           <div class="modal-meta-badges">
@@ -120,7 +90,7 @@
           </div>
           <h2 class="modal-title" id="modal-topic-title">Topic Title</h2>
         </div>
-        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close drawer">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
@@ -139,6 +109,7 @@
           <div class="status-btn-group" id="modal-status-group">
             <button class="status-btn" data-status="Not Started">Not Started</button>
             <button class="status-btn" data-status="In Progress">In Progress</button>
+            <button class="status-btn status-familiar" data-status="Familiar" title="Familiar from related concept">Familiar</button>
             <button class="status-btn status-completed" data-status="Completed">Completed</button>
           </div>
         </div>
@@ -163,6 +134,12 @@
             <div class="prereqs-tag-list" id="modal-prereqs-list">
               <span class="muted-text">None required (Foundational topic)</span>
             </div>
+          </div>
+
+          <!-- Dependents Section -->
+          <div class="topic-section" id="modal-dependents-section" style="display:none;">
+            <h3 class="section-heading">Unlocks Next</h3>
+            <div class="prereqs-tag-list" id="modal-dependents-list"></div>
           </div>
 
           <!-- Objectives Checklist -->
@@ -215,7 +192,7 @@
         <button class="btn btn-outline" id="modal-btn-find-path">Find Path Here</button>
       </div>
     </div>
-  </div>
+  </aside>
 
   <!-- Redesigned Path Finder Modal Dialog -->
   <div class="modal-backdrop" id="pathfinder-modal" aria-hidden="true">

@@ -133,8 +133,8 @@ GraphPath graph_find_path(const Graph *g, const char *start_id, const char *end_
         ListNode *edge_node = cv->outgoing_edges->head;
         while (edge_node) {
             GraphEdge *edge = (GraphEdge *)edge_node->data;
-            /* Skip concept-link edges: concept nodes must not appear in topic paths */
-            if (strcmp(edge->edge_type, "concept-link") != 0 &&
+            /* Traverse only directed prerequisite relationships for pathfinding */
+            if (strcmp(edge->edge_type, "prerequisite") == 0 &&
                 !hashmap_has(visited, edge->target_id)) {
                 hashmap_put(visited, edge->target_id, (void *)1, NULL);
                 hashmap_put(parent_map, edge->target_id, strdup(curr_id), free);
