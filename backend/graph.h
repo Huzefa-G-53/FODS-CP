@@ -54,6 +54,7 @@ GraphVertex *graph_get_vertex(const Graph *g, const char *id);
 
 // Shortest path between two nodes using BFS with parent backtracking
 GraphPath graph_find_path(const Graph *g, const char *start_id, const char *end_id);
+GraphPath graph_get_prerequisite_chain(const Graph *g, const char *topic_id);
 void graph_path_free(GraphPath *path);
 
 // Prerequisite and Dependent lookups
