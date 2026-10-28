@@ -134,11 +134,13 @@ static void test_graph_and_pathfinding(void) {
     graph_add_vertex(g, "B", "Node B", "topic");
     graph_add_vertex(g, "C", "Node C", "topic");
     graph_add_vertex(g, "D", "Node D", "topic");
+    graph_add_vertex(g, "E", "Disconnected Node E", "topic");
 
     // A -> B -> D, and A -> C -> D
     graph_add_edge(g, "A", "B", "prerequisite", 1.0);
     graph_add_edge(g, "B", "D", "prerequisite", 1.0);
     graph_add_edge(g, "A", "C", "prerequisite", 1.0);
+    graph_add_edge(g, "C", "D", "prerequisite", 1.0);
 
     GraphPath path = graph_find_path(g, "A", "D");
     assert(path.found == true);
@@ -147,6 +149,24 @@ static void test_graph_and_pathfinding(void) {
     assert(strcmp(path.node_ids[1], "B") == 0);
     assert(strcmp(path.node_ids[2], "D") == 0);
     graph_path_free(&path);
+
+    GraphPath disconnected = graph_find_path(g, "E", "D");
+    assert(disconnected.found == false);
+    assert(disconnected.count == 0);
+    graph_path_free(&disconnected);
+
+    GraphPath preparation = graph_get_prerequisite_chain(g, "D");
+    assert(preparation.found == true);
+    assert(preparation.count == 4);
+    assert(strcmp(preparation.node_ids[0], "A") == 0);
+    assert(strcmp(preparation.node_ids[3], "D") == 0);
+    size_t b_pos = 0, c_pos = 0;
+    for (size_t i = 0; i < preparation.count; i++) {
+        if (strcmp(preparation.node_ids[i], "B") == 0) b_pos = i;
+        if (strcmp(preparation.node_ids[i], "C") == 0) c_pos = i;
+    }
+    assert(b_pos < 3 && c_pos < 3 && b_pos != c_pos);
+    graph_path_free(&preparation);
 
     graph_free(g);
     printf("[+] Graph & Pathfinding tests passed!\n");
