@@ -214,35 +214,6 @@ static void roadmap_to_json(StrBuf *sb, const Roadmap *r, bool include_sections)
     sb_append(sb, "}");
 }
 
-static void get_gemini_api_key(char *out_key, size_t max_len) {
-    out_key[0] = '\0';
-    const char *env_val = getenv("GEMINI_API_KEY");
-    if (env_val && strlen(env_val) > 0) {
-        strncpy(out_key, env_val, max_len - 1);
-        out_key[max_len - 1] = '\0';
-        return;
-    }
-    FILE *f = fopen(".env", "r");
-    if (!f) return;
-    char line[512];
-    while (fgets(line, sizeof(line), f)) {
-        char *p = line;
-        while (*p == ' ' || *p == '\t') p++;
-        if (strncmp(p, "GEMINI_API_KEY=", 15) == 0) {
-            char *val = p + 15;
-            while (*val == '"' || *val == '\'' || *val == ' ' || *val == '\t') val++;
-            size_t vlen = strlen(val);
-            while (vlen > 0 && (val[vlen - 1] == '\r' || val[vlen - 1] == '\n' || val[vlen - 1] == '"' || val[vlen - 1] == '\'' || val[vlen - 1] == ' ')) {
-                val[--vlen] = '\0';
-            }
-            strncpy(out_key, val, max_len - 1);
-            out_key[max_len - 1] = '\0';
-            break;
-        }
-    }
-    fclose(f);
-}
-
 ApiResponse api_handle_request(AppState *state, const char *data_dir, const char *method, const char *path, const char *query, const char *body) {
     ApiResponse resp = { 404, "application/json", NULL };
 
@@ -261,13 +232,9 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
 
     // --- GET /api/config ---
     if (strcmp(method, "GET") == 0 && strcmp(path, "/api/config") == 0) {
-        char api_key[256] = "";
-        get_gemini_api_key(api_key, sizeof(api_key));
         StrBuf sb;
         sb_init(&sb);
-        sb_append(&sb, "{\"geminiApiKey\":");
-        sb_append_escaped(&sb, api_key);
-        sb_append(&sb, "}");
+        sb_append(&sb, "{\"geminiApiKey\":\"\"}");
         set_json_response(&resp, 200, &sb);
         return resp;
     }
@@ -567,6 +534,10 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
         if (!extract_json_field(body, "topicId", topic_id, sizeof(topic_id)) ||
             !extract_json_field(body, "status", status, sizeof(status))) {
             set_error_response(&resp, 400, "Missing 'topicId' or 'status' field");
+            return resp;
+        }
+        if (!models_is_valid_topic_status(status)) {
+            set_error_response(&resp, 400, "Invalid progress status");
             return resp;
         }
 

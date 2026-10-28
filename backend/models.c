@@ -319,8 +319,16 @@ static void on_concept_propagated(void *ctx, const char *topic_id, const char *n
     }
 }
 
+bool models_is_valid_topic_status(const char *status) {
+    return status &&
+        (strcmp(status, "Not Started") == 0 ||
+         strcmp(status, "Familiar") == 0 ||
+         strcmp(status, "In Progress") == 0 ||
+         strcmp(status, "Completed") == 0);
+}
+
 bool models_set_topic_status(AppState *state, const char *topic_id, const char *status, const char *data_dir) {
-    if (!state || !topic_id || !status) return false;
+    if (!state || !topic_id || !models_is_valid_topic_status(status)) return false;
 
     Topic *t = (Topic *)hashmap_get(state->topic_map, topic_id);
     if (!t) return false;

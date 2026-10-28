@@ -251,12 +251,6 @@
   </div>
 
   <script>
-    let GEMINI_API_KEY = "";
-    fetch('/api/config')
-      .then(res => res.json())
-      .then(data => { if (data && data.geminiApiKey) GEMINI_API_KEY = data.geminiApiKey; })
-      .catch(() => {});
-
     // Streamlined 11-Question Core Assessment Schema
     const QUESTIONS = [
       {
@@ -931,7 +925,7 @@
       const statuses = [
         "Evaluating profile against PathForge system prompt catalog...",
         "Scoring course catalog prerequisites...",
-        "Generating Gemini API response...",
+        "Selecting a recommendation from the roadmap catalog...",
         "Formulating structured recommendation..."
       ];
 

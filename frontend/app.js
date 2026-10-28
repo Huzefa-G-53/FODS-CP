@@ -499,7 +499,7 @@
                   <p style="font-size:12px; color:var(--text-secondary);">${escapeHtml(t.summary ? t.summary.slice(0, 80) + '...' : '')}</p>
                 </div>
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:11px;">
-                  <span class="status-pill" data-status="${t.status}">${t.status}</span>
+                  <span class="status-pill" data-status="${escapeHtml(t.status)}">${escapeHtml(t.status)}</span>
                   <span style="color:var(--accent-blue); font-weight:500;">Inspect Topic →</span>
                 </div>
               </div>
@@ -870,6 +870,7 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
           <p style="font-size:13.5px; color:var(--text-secondary); line-height:1.6; margin-bottom:20px;">
             Based on your assessment profile (Target: ${escapeHtml(targetRole || 'Software Engineering')}), this roadmap is your ideal fit.
           </p>
+          ${state.geminiApiKey ? '' : '<p class="muted-text">AI matching is unavailable; this recommendation used local matching.</p>'}
           <a href="#/roadmap/${matchedRoadmap.id}" class="btn btn-primary">Open Recommended Roadmap →</a>
         </div>
       `;
@@ -1119,7 +1120,7 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
         <div class="node-top-bar">
           <span class="node-status-indicator">
             <span class="node-status-dot" style="background:${dotColor};"></span>
-            <span style="font-size:11px;">${status}</span>
+            <span style="font-size:11px;">${escapeHtml(status)}</span>
           </span>
           <span class="badge badge-difficulty ${t.difficulty.toLowerCase()}" style="font-size:9.5px; padding:1px 5px;">${t.difficulty}</span>
         </div>
@@ -1150,7 +1151,7 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
     return `
       <div class="outline-topic-row" onclick="PathForge.openTopicDrawer('${t.id}')">
         <div style="display:flex; align-items:center; gap:12px;">
-          <span class="status-pill" data-status="${status}">${status}</span>
+          <span class="status-pill" data-status="${escapeHtml(status)}">${escapeHtml(status)}</span>
           <div>
             <div style="font-weight:600; font-size:14px; color:var(--text-primary);">${escapeHtml(t.title)}</div>
             <div style="font-size:12px; color:var(--text-secondary);">${escapeHtml(t.summary ? t.summary.slice(0, 90) + '...' : '')}</div>
@@ -1379,7 +1380,7 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
             return `
               <span class="badge" style="cursor:pointer; padding:5px 9px;" onclick="PathForge.openTopicDrawer('${pid}')">
                 ${escapeHtml(title)}
-                <span class="status-pill" data-status="${status}" style="font-size:9px; padding:1px 4px; margin-left:4px;">${status}</span>
+                <span class="status-pill" data-status="${escapeHtml(status)}" style="font-size:9px; padding:1px 4px; margin-left:4px;">${escapeHtml(status)}</span>
               </span>
             `;
           }).join('');
@@ -1401,7 +1402,7 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
             return `
               <span class="badge" style="cursor:pointer; padding:5px 9px;" onclick="PathForge.openTopicDrawer('${did}')">
                 ${escapeHtml(title)}
-                <span class="status-pill" data-status="${status}" style="font-size:9px; padding:1px 4px; margin-left:4px;">${status}</span>
+                <span class="status-pill" data-status="${escapeHtml(status)}" style="font-size:9px; padding:1px 4px; margin-left:4px;">${escapeHtml(status)}</span>
               </span>
             `;
           }).join('');
@@ -1634,7 +1635,7 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
                   <span class="badge badge-difficulty ${diff}">${t.difficulty || 'Beginner'}</span>
                   <span class="journey-step-time">${mins}m</span>
                 </div>
-                <span class="status-pill" data-status="${status}">${status}</span>
+                <span class="status-pill" data-status="${escapeHtml(status)}">${escapeHtml(status)}</span>
               </div>
               <div class="journey-step-title">${escapeHtml(t.title)}</div>
               <div class="journey-step-footer">

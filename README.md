@@ -1,6 +1,6 @@
 # PathForge: Visual Learning Roadmaps with C DSA Engine
 
-> **Interactive developer roadmap and prerequisite graph platform, powered by an authentic 100% pure C backend HTTP server implementing foundational Data Structures and Algorithms from scratch with ZERO third-party libraries.**
+> **Interactive developer roadmap and prerequisite graph platform, powered by a pure C backend HTTP server implementing foundational Data Structures and Algorithms from scratch.**
 
 Inspired by [roadmap.sh](https://roadmap.sh), PathForge bridges modern web developer tooling with foundational computer science engineering. Every prerequisite path, topic recommendation, and graph traversal runs through real C data structures (`LinkedList`, `Stack`, `FIFO Queue`, `Separate-Chaining HashMap`, `Directed Graph`).
 
@@ -13,8 +13,8 @@ PathForge is organized into a clean decoupled architecture:
 ```
 pathforge/
 ├── data/                    # Plain text formatted content repository
-│   ├── roadmaps.dat         # 9 roadmaps (Languages, Professions, Sub-roadmaps)
-│   ├── topics.dat           # 48 comprehensive, realistic topics with code & pitfalls
+│   ├── roadmaps.dat         # 32 roadmaps (Languages, Professions, Sub-roadmaps)
+│   ├── topics.dat           # 237 curated topics with code & pitfalls
 │   ├── concepts.dat         # Shared cross-discipline concepts (variables, control flow, etc.)
 │   └── progress.dat         # Persistent user mastery state (key=status)
 ├── backend/                 # Pure Hand-Written C DSA & Native HTTP Server (0 Libraries)
@@ -111,9 +111,9 @@ Output:
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
 | `GET` | `/api/stats` | Global topic, roadmap, graph vertex/edge counts, and mastery percentages |
-| `GET` | `/api/roadmaps` | Returns all 9 curated roadmaps with sections and stages |
+| `GET` | `/api/roadmaps` | Returns all 32 curated roadmaps with sections and stages |
 | `GET` | `/api/roadmaps/:id` | Returns single roadmap details with topic lists |
-| `GET` | `/api/topics` | Returns summary list of all 48 topics |
+| `GET` | `/api/topics` | Returns summary list of all 237 topics |
 | `GET` | `/api/topics/:id` | Returns complete topic detail (explanation, objectives, code, pitfalls, resources) |
 | `GET` | `/api/topics/:id/prerequisites` | Returns topic's incoming prerequisite edges from graph |
 | `GET` | `/api/topics/:id/dependents` | Returns topic's outgoing dependent edges |

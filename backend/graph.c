@@ -174,8 +174,6 @@ GraphPath graph_find_path(const Graph *g, const char *start_id, const char *end_
     hashmap_free(visited, NULL);
     hashmap_free(parent_map, free);
 
-    hashmap_free(visited, NULL);
-    hashmap_free(parent_map, free);
 
     /* No directed prerequisite path exists from start_id to end_id. */
     return res;

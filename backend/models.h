@@ -85,6 +85,7 @@ typedef struct AppState {
 AppState *models_init(const char *data_dir);
 void models_free(AppState *state);
 bool models_save_progress(AppState *state, const char *data_dir);
+bool models_is_valid_topic_status(const char *status);
 bool models_set_topic_status(AppState *state, const char *topic_id, const char *status, const char *data_dir);
 
 #endif // PATHFORGE_MODELS_H
