@@ -1574,14 +1574,15 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
     try {
       const data = await api.get(`/api/path?from=${encodeURIComponent(start)}&to=${encodeURIComponent(end)}`);
 
-      if (!data.found || !data.path || data.path.length === 0) {
+      const isSuggested = Boolean(data.suggested);
+      if ((!data.found && !isSuggested) || !data.path || data.path.length === 0) {
         hopsCount.textContent = 'No Path';
         statusInfo.textContent = 'No Direct Sequence Found';
         stepsFlow.innerHTML = `
           <div class="path-no-route-card">
             <div class="no-route-icon">🔀</div>
             <div class="no-route-title">No Direct Prerequisite Pathway</div>
-            <p class="no-route-desc">These topics belong to independent tracks or there is no directed dependency between them.</p>
+            <p class="no-route-desc">These topics are not connected by a directed prerequisite relationship, and the destination has no prerequisite chain to suggest.</p>
           </div>
         `;
         return;
@@ -1597,7 +1598,6 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
       const mins = totalMinutes % 60;
       const timeFormatted = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
 
-      const isSuggested = Boolean(data.suggested);
       hopsCount.textContent = isSuggested ? `${data.path.length} Steps (Suggested)` : `${data.path.length} Topics (${data.hops} Hops)`;
       statusInfo.textContent = `Est. Study Time: ${timeFormatted}`;
 
