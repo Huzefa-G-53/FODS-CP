@@ -448,13 +448,26 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
         }
 
         GraphPath gp = graph_find_path(state->graph, from_id, to_id);
+        bool suggested = false;
+        if (!gp.found) {
+            graph_path_free(&gp);
+            GraphPath preparation = graph_get_prerequisite_chain(state->graph, to_id);
+            if (preparation.found && preparation.count > 1) {
+                gp = preparation;
+                suggested = true;
+            } else {
+                graph_path_free(&preparation);
+            }
+        }
+
         StrBuf sb;
         sb_init(&sb);
         sb_append(&sb, "{\"from\":"); sb_append_escaped(&sb, from_id);
         sb_append(&sb, ",\"to\":"); sb_append_escaped(&sb, to_id);
-        sb_append(&sb, ",\"found\":"); sb_append(&sb, gp.found ? "true" : "false");
+        sb_append(&sb, ",\"found\":"); sb_append(&sb, (!suggested && gp.found) ? "true" : "false");
+        sb_append(&sb, ",\"suggested\":"); sb_append(&sb, suggested ? "true" : "false");
         char hops_buf[32];
-        snprintf(hops_buf, sizeof(hops_buf), "%zu", gp.found && gp.count > 0 ? gp.count - 1 : 0);
+        snprintf(hops_buf, sizeof(hops_buf), "%zu", (!suggested && gp.found && gp.count > 0) ? gp.count - 1 : 0);
         sb_append(&sb, ",\"hops\":"); sb_append(&sb, hops_buf);
         sb_append(&sb, ",\"path\":[");
 
