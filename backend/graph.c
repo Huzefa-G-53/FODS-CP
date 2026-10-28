@@ -174,68 +174,135 @@ GraphPath graph_find_path(const Graph *g, const char *start_id, const char *end_
     hashmap_free(visited, NULL);
     hashmap_free(parent_map, free);
 
-    // Phase 2: Prerequisite chain resolution
-    Stack *prereq_chain = stack_create();
-    HashMap *chain_visited = hashmap_create(64);
-    Queue *prereq_q = queue_create();
+    hashmap_free(visited, NULL);
+    hashmap_free(parent_map, free);
 
-    hashmap_put(chain_visited, end_id, (void *)1, NULL);
-    queue_enqueue(prereq_q, (void *)end_id);
+    /* No directed prerequisite path exists from start_id to end_id. */
+    return res;
+}
 
-    while (!queue_is_empty(prereq_q)) {
-        char *cid = (char *)queue_dequeue(prereq_q);
-        stack_push(prereq_chain, strdup(cid));
+/*
+ * Return the complete prerequisite preparation chain for a topic.
+ * This does not claim a path from a selected start topic: it collects the
+ * destination and all prerequisite ancestors, then topologically orders them.
+ */
+GraphPath graph_get_prerequisite_chain(const Graph *g, const char *topic_id) {
+    GraphPath res = { NULL, 0, false };
+    if (!g || !topic_id || !graph_get_vertex(g, topic_id)) return res;
 
-        GraphVertex *cv = graph_get_vertex(g, cid);
-        if (cv) {
-            ListNode *curr = cv->incoming_edges->head;
-            while (curr) {
-                GraphEdge *edge = (GraphEdge *)curr->data;
-                if (strcmp(edge->edge_type, "prerequisite") == 0) {
-                    if (!hashmap_has(chain_visited, edge->target_id)) {
-                        hashmap_put(chain_visited, edge->target_id, (void *)1, NULL);
-                        queue_enqueue(prereq_q, edge->target_id);
+    HashMap *included = hashmap_create(64);
+    Queue *reverse_q = queue_create();
+    if (!included || !reverse_q) {
+        if (included) hashmap_free(included, NULL);
+        if (reverse_q) queue_free(reverse_q, NULL);
+        return res;
+    }
+
+    hashmap_put(included, topic_id, (void *)1, NULL);
+    queue_enqueue(reverse_q, (void *)topic_id);
+    while (!queue_is_empty(reverse_q)) {
+        const char *current_id = (const char *)queue_dequeue(reverse_q);
+        GraphVertex *current = graph_get_vertex(g, current_id);
+        if (!current) continue;
+        ListNode *edge_node = current->incoming_edges->head;
+        while (edge_node) {
+            GraphEdge *edge = (GraphEdge *)edge_node->data;
+            if (strcmp(edge->edge_type, "prerequisite") == 0 &&
+                !hashmap_has(included, edge->target_id)) {
+                hashmap_put(included, edge->target_id, (void *)1, NULL);
+                queue_enqueue(reverse_q, edge->target_id);
+            }
+            edge_node = edge_node->next;
+        }
+    }
+    queue_free(reverse_q, NULL);
+
+    size_t count = 0;
+    ListNode *vertex_node = g->vertices->head;
+    while (vertex_node) {
+        GraphVertex *vertex = (GraphVertex *)vertex_node->data;
+        if (hashmap_has(included, vertex->id)) count++;
+        vertex_node = vertex_node->next;
+    }
+
+    GraphVertex **nodes = (GraphVertex **)malloc(sizeof(GraphVertex *) * count);
+    size_t *indegree = (size_t *)calloc(count, sizeof(size_t));
+    if (!nodes || !indegree) {
+        free(nodes);
+        free(indegree);
+        hashmap_free(included, NULL);
+        return res;
+    }
+
+    size_t index = 0;
+    vertex_node = g->vertices->head;
+    while (vertex_node) {
+        GraphVertex *vertex = (GraphVertex *)vertex_node->data;
+        if (hashmap_has(included, vertex->id)) nodes[index++] = vertex;
+        vertex_node = vertex_node->next;
+    }
+
+    for (size_t i = 0; i < count; i++) {
+        ListNode *edge_node = nodes[i]->incoming_edges->head;
+        while (edge_node) {
+            GraphEdge *edge = (GraphEdge *)edge_node->data;
+            if (strcmp(edge->edge_type, "prerequisite") == 0 &&
+                hashmap_has(included, edge->target_id)) indegree[i]++;
+            edge_node = edge_node->next;
+        }
+    }
+
+    Queue *ready = queue_create();
+    char **ordered_ids = (char **)malloc(sizeof(char *) * count);
+    if (!ready || !ordered_ids) {
+        if (ready) queue_free(ready, NULL);
+        free(ordered_ids);
+        free(nodes);
+        free(indegree);
+        hashmap_free(included, NULL);
+        return res;
+    }
+    for (size_t i = 0; i < count; i++) {
+        if (indegree[i] == 0) queue_enqueue(ready, nodes[i]);
+    }
+
+    size_t ordered_count = 0;
+    while (!queue_is_empty(ready)) {
+        GraphVertex *current = (GraphVertex *)queue_dequeue(ready);
+        ordered_ids[ordered_count] = strdup(current->id);
+        if (!ordered_ids[ordered_count]) break;
+        ordered_count++;
+
+        ListNode *edge_node = current->outgoing_edges->head;
+        while (edge_node) {
+            GraphEdge *edge = (GraphEdge *)edge_node->data;
+            if (strcmp(edge->edge_type, "prerequisite") == 0 &&
+                hashmap_has(included, edge->target_id)) {
+                for (size_t i = 0; i < count; i++) {
+                    if (strcmp(nodes[i]->id, edge->target_id) == 0 && indegree[i] > 0) {
+                        indegree[i]--;
+                        if (indegree[i] == 0) queue_enqueue(ready, nodes[i]);
+                        break;
                     }
                 }
-                curr = curr->next;
             }
+            edge_node = edge_node->next;
         }
-    }
-    queue_free(prereq_q, NULL);
-    hashmap_free(chain_visited, NULL);
-
-    bool start_in_chain = false;
-    StackNode *curr_node = prereq_chain->top;
-    while (curr_node) {
-        if (strcmp((char *)curr_node->data, start_id) == 0) {
-            start_in_chain = true;
-            break;
-        }
-        curr_node = curr_node->next;
     }
 
-    if (start_in_chain) {
-        while (!stack_is_empty(prereq_chain)) {
-            char *node_id = (char *)stack_pop(prereq_chain);
-            if (strcmp(node_id, start_id) == 0) {
-                res.count = 1 + stack_size(prereq_chain);
-                res.node_ids = (char **)malloc(sizeof(char *) * res.count);
-                res.node_ids[0] = node_id;
-                size_t idx = 1;
-                while (!stack_is_empty(prereq_chain)) {
-                    res.node_ids[idx++] = (char *)stack_pop(prereq_chain);
-                }
-                break;
-            }
-            free(node_id);
-        }
-        stack_free(prereq_chain, free);
-        res.found = true;
-    } else {
-        /* start_id has no connection to end_id — do not fabricate a path */
-        stack_free(prereq_chain, free);
-        res.found = false;
+    queue_free(ready, NULL);
+    free(nodes);
+    free(indegree);
+    hashmap_free(included, NULL);
+    if (ordered_count != count) {
+        for (size_t i = 0; i < ordered_count; i++) free(ordered_ids[i]);
+        free(ordered_ids);
+        return res;
     }
+
+    res.node_ids = ordered_ids;
+    res.count = ordered_count;
+    res.found = true;
     return res;
 }
 
