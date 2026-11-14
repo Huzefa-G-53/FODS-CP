@@ -13,7 +13,7 @@ if not exist "server.exe" (
     )
 )
 
-echo [*] Launching PathForge HTTP Server on http://localhost:8000
+echo [*] Launching PathForge HTTP Server on http://localhost:8001
 echo [*] Press Ctrl+C to stop the server
-server.exe --port 8000 --data data --frontend frontend
+server.exe --port 8001 --data data --frontend frontend
 pause

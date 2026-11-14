@@ -94,7 +94,6 @@ name: Deployment & Operations
 description: Packaging applications, configuring environments, serving traffic, and monitoring deployed software.
 topics: aiml-model-deployment-onnx,backend-docker-containerization,fullstack-cloud-deployment
 
-
 === CONCEPT ===
 id: arrays-collections
 name: Arrays & Collection Processing
@@ -167,8 +166,6 @@ name: Data Analysis and Transformation
 description: Cleaning, transforming, validating, and interpreting structured data for decisions and downstream systems.
 topics: aiml-data-cleaning-feature-engineering,aiml-python-scientific-stack,analyst-python-pandas,analyst-statistics,data-eng-python-pipelines,data-eng-data-quality
 
-
-
 === CONCEPT ===
 id: model-evaluation
 name: Model Evaluation and Validation
@@ -240,3 +237,281 @@ id: least-privilege
 name: Least Privilege and Trust Boundaries
 description: Access should be limited to the minimum resources and actions required, across network, pipeline, and AI tool boundaries
 topics: net-firewalls-segmentation,dso-secure-pipeline,aieng-tool-use
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: c-memory-safety
+name: C Memory Safety
+description: Pointer validity, object lifetime, bounds, ownership, allocation failure, and defensive resource cleanup.
+topics: c-curr-c-program-structure-and-standard-library,c-curr-arrays-and-multidimensional-arrays,c-curr-c-strings-and-character-handling,c-curr-pointers-and-pointer-arithmetic,c-curr-dynamic-memory-and-ownership,c-curr-structures-unions-and-enumerations,c-curr-core-data-structures-in-c,c-curr-undefined-behavior-and-defensive-c
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: c-build-toolchain
+name: C Build and Toolchain
+description: Preprocessing, translation units, linking, compiler diagnostics, build automation, and debugging workflows.
+topics: c-curr-c-toolchain-and-first-program,c-curr-c-program-structure-and-standard-library,c-curr-preprocessor-and-header-design,c-curr-separate-compilation-and-linking,c-curr-file-i-o-and-command-line-arguments,c-curr-compiler-diagnostics-and-debugging,c-curr-testing-and-runtime-analysis
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: java-type-system
+name: Java Type System and Object Contracts
+description: Reference semantics, generics, immutability, object contracts, and safe API design in Java.
+topics: java-curr-types-variables-and-operators,java-curr-classes-objects-and-encapsulation,java-curr-inheritance-polymorphism-and-interfaces,java-curr-object-contracts-and-modern-types,java-curr-generics-and-type-safety,java-curr-collections-framework,java-curr-exceptions-and-resource-management,java-curr-lambdas-functional-interfaces-and-streams
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: java-runtime-concurrency
+name: JVM Runtime and Concurrency
+description: Class loading, garbage collection, JIT compilation, thread safety, synchronization, and executor-based concurrency.
+topics: java-curr-jdk-jvm-and-java-execution,java-curr-jvm-runtime-and-memory,java-curr-threads-and-synchronization,java-curr-executors-and-concurrent-utilities,java-curr-jdbc-and-database-transactions
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: python-data-model
+name: Python Object and Data Model
+description: Object identity, mutability, hashing, iteration, special methods, protocols, and resource lifetimes.
+topics: python-curr-lists-tuples-and-sequence-operations,python-curr-dictionaries-sets-and-hashing,python-curr-classes-and-python-data-model,python-curr-exceptions-and-context-managers,python-curr-iterators-and-generators,python-curr-decorators-and-resource-patterns,python-curr-asynchronous-and-concurrent-python
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: python-quality-tooling
+name: Python Project Quality
+description: Virtual environments, packaging, testing, typing, debugging, linting, and reproducible project configuration.
+topics: python-curr-interpreter-environments-and-packages,python-curr-functions-modules-and-packages,python-curr-testing-and-debugging,python-curr-http-apis-and-application-configuration,python-curr-profiling-and-performance
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: dsa-complexity
+name: Algorithm Analysis
+description: Asymptotic bounds, recurrences, correctness, time-space trade-offs, and workload-aware algorithm selection.
+topics: dsa-curr-algorithmic-problem-solving,dsa-curr-time-and-space-complexity,dsa-curr-amortized-analysis,dsa-curr-searching-algorithms,dsa-curr-comparison-sorting,dsa-curr-non-comparison-sorting,dsa-curr-binary-search-trees,dsa-curr-balanced-search-trees,dsa-curr-shortest-path-algorithms,dsa-curr-greedy-algorithms,dsa-curr-backtracking,dsa-curr-dynamic-programming,dsa-curr-randomized-algorithms,dsa-curr-string-matching-algorithms,dsa-curr-practice-analysis-and-review,computer-science-fundamentals-curr-data-structures-and-algorithm-analysis
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: dsa-graph-theory
+name: Graph Models and Algorithms
+description: Graph representations, traversal, ordering, connectivity, shortest paths, and spanning structures.
+topics: dsa-curr-graph-models-and-representations,dsa-curr-graph-properties-and-ordering,dsa-curr-minimum-spanning-trees-and-disjoint-sets,dsa-curr-advanced-graph-topics
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: dsa-problem-patterns
+name: Algorithmic Problem-Solving Patterns
+description: Recursion, divide and conquer, greedy choice, backtracking, dynamic programming, and common array/string patterns.
+topics: dsa-curr-divide-and-conquer,dsa-curr-greedy-algorithms,dsa-curr-backtracking,dsa-curr-dynamic-programming,dsa-curr-two-pointers-sliding-windows-and-prefix-sums,dsa-curr-monotonic-structures-and-interval-patterns
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: cs-computer-architecture
+name: Computer Architecture
+description: Binary representation, Boolean logic, CPU execution, memory hierarchy, and performance behavior.
+topics: computer-science-fundamentals-curr-boolean-algebra-and-logic,computer-science-fundamentals-curr-number-systems-and-data-representation,computer-science-fundamentals-curr-cpu-and-instruction-execution,computer-science-fundamentals-curr-memory-hierarchy-and-performance,computer-science-fundamentals-curr-cpu-scheduling-and-synchronization
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: cs-operating-systems
+name: Operating System Abstractions
+description: Processes, threads, scheduling, synchronization, virtual memory, file systems, and system calls.
+topics: computer-science-fundamentals-curr-processes-threads-and-system-calls,computer-science-fundamentals-curr-cpu-scheduling-and-synchronization,computer-science-fundamentals-curr-file-systems-and-i-o
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: cs-networking
+name: Network Protocol Foundations
+description: Layering, addressing, routing, transport semantics, HTTP, DNS, and network failure behavior.
+topics: computer-science-fundamentals-curr-network-models-and-link-layer,computer-science-fundamentals-curr-ip-addressing-and-routing,computer-science-fundamentals-curr-transport-and-application-protocols
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: backend-api-contracts
+name: Backend API Contracts
+description: HTTP semantics, resource modeling, validation, error formats, pagination, idempotency, versioning, and compatibility.
+topics: backend-developer-curr-internet-protocols-and-http,backend-developer-curr-rest-api-design-and-contracts,backend-developer-curr-configuration-validation-and-error-handling,backend-developer-curr-api-compatibility-and-rate-limiting,backend-development-curr-resource-modeling-and-http-semantics,backend-development-curr-validation-pagination-and-error-contracts,backend-development-curr-versioning-and-compatibility,backend-development-curr-cache-patterns-and-invalidation
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: backend-resilience
+name: Backend Reliability Patterns
+description: Retries, timeouts, rate limits, background work, messaging, observability, and production incident handling.
+topics: backend-developer-curr-api-compatibility-and-rate-limiting,backend-developer-curr-background-jobs-and-messaging,backend-development-curr-resilient-service-integration,backend-development-curr-observability-and-slos
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: backend-identity-security
+name: Backend Identity and Security
+description: Authentication, authorization, session and token lifecycles, tenant isolation, secrets, and threat boundaries.
+topics: backend-developer-curr-authentication-and-authorization,backend-developer-curr-web-application-security,backend-development-curr-sessions-tokens-and-authorization
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: database-logical-design
+name: Relational Database Design
+description: Entities, relationships, keys, constraints, normalization, SQL, and schema evolution.
+topics: database-engineer-curr-relational-model-keys-and-constraints,database-engineer-curr-er-modeling-and-schema-design,database-engineer-curr-normalization-and-functional-dependencies,database-engineer-curr-sql-fundamentals,database-engineer-curr-advanced-sql-and-analytical-queries,database-engineer-curr-schema-migrations-and-deployment,database-engineer-curr-nosql-data-models
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: database-engine-internals
+name: Database Engine Internals
+description: Transactions, MVCC, locks, indexes, query planning, storage pages, WAL, and maintenance.
+topics: database-engineer-curr-acid-and-transaction-boundaries,database-engineer-curr-isolation-levels-and-anomalies,database-engineer-curr-locking-mvcc-and-deadlocks,database-engineer-curr-index-structures-and-trade-offs,database-engineer-curr-query-planning-and-execution,database-engineer-curr-query-and-workload-tuning,database-engineer-curr-storage-pages-and-buffer-management,database-engineer-curr-vacuuming-statistics-and-maintenance
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: database-operations
+name: Database Operations and Recovery
+description: Backups, point-in-time recovery, replication, availability, security, capacity, and operational maintenance.
+topics: database-engineer-curr-write-ahead-logging-and-recovery,database-engineer-curr-monitoring-and-capacity-planning,database-engineer-curr-backup-and-point-in-time-recovery,database-engineer-curr-replication-and-high-availability,database-engineer-curr-database-security-and-governance
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: web-browser-platform
+name: Browser and Web Platform
+description: HTML semantics, CSS layout, DOM, browser APIs, event loop, fetch, and client-server boundaries.
+topics: fullstack-developer-curr-semantic-html-and-forms,fullstack-developer-curr-css-foundations-and-responsive-layout,fullstack-developer-curr-javascript-and-browser-apis,frontend-developer-curr-web-standards-and-browser-basics,frontend-developer-curr-semantic-html,frontend-developer-curr-forms-and-native-controls,frontend-developer-curr-css-fundamentals,frontend-developer-curr-motion-and-advanced-css,frontend-developer-curr-javascript-language-fundamentals,frontend-developer-curr-asynchronous-javascript,frontend-developer-curr-dom-events-and-browser-apis,frontend-developer-curr-performance-and-production
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: web-ui-engineering
+name: Frontend UI Engineering
+description: Components, state, routing, forms, accessibility, TypeScript, rendering, and user-facing performance.
+topics: fullstack-developer-curr-component-architecture-and-state,fullstack-developer-curr-accessibility-and-frontend-testing,frontend-developer-curr-version-control-and-frontend-tooling,frontend-developer-curr-accessibility-tree-and-content-semantics,frontend-developer-curr-typescript-for-ui-applications,frontend-developer-curr-component-frameworks-and-architecture,frontend-developer-curr-server-state-and-data-fetching,frontend-developer-curr-frontend-testing,frontend-developer-curr-performance-and-production,frontend-developer-curr-frontend-security-and-privacy
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: web-app-security
+name: Web Application Security
+description: Authentication, authorization, CORS, XSS, CSRF, output encoding, secure cookies, and privacy boundaries.
+topics: fullstack-developer-curr-authentication-and-application-security,frontend-developer-curr-frontend-security-and-privacy
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: fullstack-delivery
+name: Full-Stack Integration and Delivery
+description: API integration, persistence, cross-layer testing, configuration, deployment, observability, and rollback.
+topics: fullstack-developer-curr-component-architecture-and-state,fullstack-developer-curr-accessibility-and-frontend-testing,fullstack-developer-curr-rest-apis-and-client-integration,fullstack-developer-curr-full-stack-testing-strategy,fullstack-developer-curr-build-deployment-and-configuration,fullstack-developer-curr-observability-reliability-and-architecture
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: qa-test-design
+name: Test Design and Risk
+description: Test basis, risk analysis, equivalence partitions, boundaries, decision tables, state transitions, and exploratory testing.
+topics: qa-test-automation-curr-software-testing-fundamentals,qa-test-automation-curr-test-planning-and-risk-analysis,qa-test-automation-curr-defect-management-and-test-documentation,qa-test-automation-curr-experience-based-and-exploratory-testing,qa-test-automation-curr-api-and-contract-testing,qa-test-automation-curr-performance-and-reliability-testing,qa-test-automation-curr-security-and-accessibility-testing
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: qa-automation
+name: Test Automation Engineering
+description: Unit, API, contract, and browser automation; fixtures, isolation, framework design, and flaky-test diagnosis.
+topics: qa-test-automation-curr-programming-for-test-automation,qa-test-automation-curr-test-framework-fundamentals,qa-test-automation-curr-browser-automation,qa-test-automation-curr-automation-framework-design,qa-test-automation-curr-flaky-test-diagnosis
+
+=== CONCEPT ===
+=== CONCEPT ===
+id: qa-quality-ops
+name: Quality Operations and Non-Functional Testing
+description: CI gates, reporting, performance, reliability, security, accessibility, and quality metrics.
+topics: qa-test-automation-curr-ci-test-pipelines-and-quality-gates,qa-test-automation-curr-performance-and-reliability-testing,qa-test-automation-curr-security-and-accessibility-testing,qa-test-automation-curr-advanced-quality-engineering
+
+=== CONCEPT ===
+id: linux-operations
+name: Linux Operations
+description: Filesystems, process control, service management and host configuration.
+topics: devops-linux-shell,devops-filesystem-permissions,devops-process-service-management,devops-configuration-management
+
+=== CONCEPT ===
+id: delivery-supply-chain
+name: Delivery Supply Chain
+description: Build reproducibility, artifact integrity, pipeline security and release control.
+topics: devops-build-artifacts,devops-pipeline-security,devops-release-strategies,dso-artifact-signing
+
+=== CONCEPT ===
+id: cloud-governance
+name: Cloud Governance
+description: Account structure, policy enforcement, identity boundaries and compliance controls.
+topics: cloud-landing-zones,cloud-policy-governance,cloud-security-posture
+
+=== CONCEPT ===
+id: cloud-resilience
+name: Cloud Resilience
+description: Failure domains, managed services, data protection and recovery design.
+topics: cloud-regions-availability,cloud-managed-services,cloud-data-protection,cloud-resilience-design
+
+=== CONCEPT ===
+id: sre-engineering
+name: Reliability Engineering
+description: Service indicators, alert quality, resilience patterns and operational learning.
+topics: sre-service-level-indicators,sre-alert-design,sre-resilience-patterns,sre-postmortem-learning,sre-chaos-testing
+
+=== CONCEPT ===
+id: network-engineering
+name: Network Engineering
+description: IPv6, subnet design, switching, routing, secure access and packet-level diagnosis.
+topics: net-ipv6-routing,net-subnet-design,net-vlan-wireless,net-routing-protocols,net-packet-analysis
+
+=== CONCEPT ===
+id: defensive-security
+name: Defensive Security Operations
+description: Risk assessment, detection engineering, intelligence, forensics and threat hunting.
+topics: cyber-risk-assessment,cyber-detection-engineering,cyber-threat-intelligence,cyber-digital-forensics,cyber-threat-hunting
+
+=== CONCEPT ===
+id: secure-delivery-engineering
+name: Secure Software Delivery
+description: Security requirements, dependency governance, signed artifacts, runtime controls and compliance evidence.
+topics: dso-security-requirements,dso-software-composition,dso-artifact-signing,dso-runtime-security,dso-security-testing,dso-compliance-evidence
+
+=== CONCEPT ===
+id: systems-runtime
+name: Systems Runtime Engineering
+description: C runtime, ABI, IPC, performance measurement, memory diagnostics and native hardening.
+topics: sysprog-c-runtime-abi,sysprog-ipc-signals,sysprog-profiling-benchmarking,sysprog-memory-diagnostics,sysprog-security-hardening
+
+=== CONCEPT ===
+id: android-app-platform
+name: Android Application Platform
+description: Android application components, lifecycle, permissions, background execution, native UI, and platform integration.
+topics: android-platform-components,android-background-work,android-performance-accessibility
+
+=== CONCEPT ===
+id: ios-app-platform
+name: iOS Application Platform
+description: Apple app lifecycle, capabilities, native UI, background execution, accessibility, privacy, and distribution.
+topics: ios-apple-platform-foundations,ios-background-notifications,ios-accessibility-performance
+
+=== CONCEPT ===
+id: mobile-app-architecture
+name: Mobile Application Architecture
+description: State ownership, repositories, dependency injection, persistence, networking, and testable mobile application boundaries.
+topics: android-architecture-patterns,ios-application-architecture,android-persistence,ios-persistence-networking
+
+=== CONCEPT ===
+id: game-engineering
+name: Game Engineering Systems
+description: Real-time loops, game mathematics, rendering, physics, AI, asset workflows, persistence, and multiplayer synchronization.
+topics: game-programming-basics,game-math-rendering-foundations,game-networked-multiplayer
+
+=== CONCEPT ===
+id: embedded-firmware
+name: Embedded Firmware Engineering
+description: Cross-compilation, MCU memory maps, register access, peripheral drivers, DMA, interrupts, and firmware lifecycle.
+topics: emb-mcu-architecture,embedded-toolchain-startup-linker,embedded-registers-volatile-dma
+
+=== CONCEPT ===
+id: real-time-systems
+name: Real-Time and Resource-Constrained Systems
+description: Scheduling, deadlines, bounded resource use, interrupt behavior, power constraints, and fault handling.
+topics: emb-rtos-scheduling,emb-c-firmware,embedded-safety-verification
+
+=== CONCEPT ===
+id: system-architecture
+name: Software System Architecture
+description: System context, quality attributes, boundaries, styles, service decomposition, data ownership, and evolution.
+topics: arch-system-context-stakeholders,arch-quality-attributes,arch-styles-patterns,arch-system-design-distributed
+
+=== CONCEPT ===
+id: architecture-governance
+name: Architecture Governance and Evolution
+description: Architecture decisions, diagrams, fitness functions, security reviews, deployment trade-offs, and migration planning.
+topics: arch-adrs-diagrams,arch-governance-fitness-functions,arch-cloud-deployment-evolution
+

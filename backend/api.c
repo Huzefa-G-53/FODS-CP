@@ -196,6 +196,18 @@ static void roadmap_to_json(StrBuf *sb, const Roadmap *r, bool include_sections)
     sb_append(sb, "\"estimatedHours\":"); sb_append(sb, num_buf); sb_append(sb, ",");
     sb_append(sb, "\"icon\":"); sb_append_escaped(sb, r->icon);
 
+    sb_append(sb, ",\"prerequisiteRoadmaps\":[");
+    for (size_t i = 0; i < r->prerequisite_roadmap_count; i++) {
+        if (i > 0) sb_append(sb, ",");
+        sb_append_escaped(sb, r->prerequisiteRoadmaps[i]);
+    }
+    sb_append(sb, "],\"relatedRoadmaps\":[");
+    for (size_t i = 0; i < r->related_roadmap_count; i++) {
+        if (i > 0) sb_append(sb, ",");
+        sb_append_escaped(sb, r->relatedRoadmaps[i]);
+    }
+    sb_append(sb, "]");
+
     if (include_sections) {
         sb_append(sb, ",\"sections\":[");
         for (size_t i = 0; i < r->section_count; i++) {
@@ -378,6 +390,23 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
             }
             sb_append(&sb, "]");
             graph_path_free(&gp);
+            set_json_response(&resp, 200, &sb);
+            return resp;
+        } else if (strcmp(action, "related") == 0) {
+            RelatedTopicsResult related = models_get_related_topics(state, topic_id);
+            StrBuf sb;
+            sb_init(&sb);
+            sb_append(&sb, "[");
+            for (size_t i = 0; i < related.count; i++) {
+                if (i > 0) sb_append(&sb, ",");
+                sb_append(&sb, "{\"topicId\":"); sb_append_escaped(&sb, related.topic_ids[i]);
+                sb_append(&sb, ",\"topicTitle\":"); sb_append_escaped(&sb, related.topic_titles[i]);
+                sb_append(&sb, ",\"conceptId\":"); sb_append_escaped(&sb, related.concept_ids[i]);
+                sb_append(&sb, ",\"conceptName\":"); sb_append_escaped(&sb, related.concept_names[i]);
+                sb_append(&sb, "}");
+            }
+            sb_append(&sb, "]");
+            models_free_related_topics(&related);
             set_json_response(&resp, 200, &sb);
             return resp;
         } else if (strcmp(action, "subroadmap") == 0) {

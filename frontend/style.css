@@ -419,6 +419,85 @@ button {
 }
 
 /* ==========================================================================
+   Related Topic Cards (Topic Drawer)
+   ========================================================================== */
+.related-topic-card {
+  padding: 10px 12px;
+  margin: 6px 0;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.related-topic-card:hover {
+  background: var(--bg-secondary);
+  transform: translateX(4px);
+}
+
+.related-topic-card:focus {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.related-topic-card:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.related-topic-card .topic-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.related-topic-card .roadmap-info {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.related-topic-card .concept-info {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+/* Roadmap prerequisite/related sections */
+.roadmap-prereqs h4,
+.roadmap-related h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.roadmap-prereqs h4 svg,
+.roadmap-related h4 svg {
+  flex-shrink: 0;
+}
+
+.roadmap-prereqs .badge,
+.roadmap-related .badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  margin: 2px;
+}
+
+.roadmap-prereqs .badge:hover,
+.roadmap-related .badge:hover {
+  background: var(--bg-secondary);
+}
+
+/* ==========================================================================
    Hero Banner & Dashboard
    ========================================================================== */
 .hero-banner {

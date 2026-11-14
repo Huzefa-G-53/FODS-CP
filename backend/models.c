@@ -173,6 +173,17 @@ static void load_roadmaps(AppState *state, const char *data_dir) {
             curr = (Roadmap *)calloc(1, sizeof(Roadmap));
             curr_sec = NULL;
             state->roadmaps[state->roadmap_count++] = curr;
+
+            // Check if the roadmap ID is on the same line (new format: "=== ROADMAP ===id: c")
+            char *id_ptr = strstr(line, "id:");
+            if (id_ptr) {
+                id_ptr += 3; // Skip "id:"
+                while (*id_ptr == ' ') id_ptr++;
+                trim_crlf(id_ptr);
+                if (*id_ptr) {
+                    strncpy(curr->id, id_ptr, sizeof(curr->id) - 1);
+                }
+            }
             continue;
         }
 
@@ -213,6 +224,10 @@ static void load_roadmaps(AppState *state, const char *data_dir) {
                 curr->estimatedHours = atoi(val);
             } else if (strcmp(key, "icon") == 0) {
                 strncpy(curr->icon, val, sizeof(curr->icon) - 1);
+            } else if (strcmp(key, "prerequisiteRoadmaps") == 0) {
+                curr->prerequisiteRoadmaps = split_comma(val, &curr->prerequisite_roadmap_count);
+            } else if (strcmp(key, "relatedRoadmaps") == 0) {
+                curr->relatedRoadmaps = split_comma(val, &curr->related_roadmap_count);
             }
         }
     }
@@ -383,6 +398,27 @@ AppState *models_init(const char *data_dir) {
         }
     }
 
+    // Build reverse index: concept -> topics mapping
+    // Also compute related topics for each topic via shared concepts
+    {
+        // concept_id -> list of topic_ids
+        // We'll use a simple approach: for each concept, add concept-link edges
+        // and then related topics can be found via the graph
+        // The detailed reverse index computation is done in models_get_related_topics()
+    }
+
+    // Compute related topics via shared concepts
+    {
+        // For each topic, find other topics that share concepts
+        for (size_t i = 0; i < state->topic_count; i++) {
+            Topic *t = state->topics[i];
+            (void)t; // Suppress unused warning - computed lazily via models_get_related_topics()
+            // We'll track which concepts this topic is linked to
+            // and which other topics share those concepts
+            // This is done lazily on demand via models_get_related_topics()
+        }
+    }
+
     // Build Roadmap & Section graph edges
     for (size_t i = 0; i < state->roadmap_count; i++) {
         Roadmap *r = state->roadmaps[i];
@@ -416,8 +452,215 @@ AppState *models_init(const char *data_dir) {
         }
     }
 
+    // Build Prerequisite Roadmap edges and check for cycles
+    for (size_t i = 0; i < state->roadmap_count; i++) {
+        Roadmap *r = state->roadmaps[i];
+        for (size_t j = 0; j < r->prerequisite_roadmap_count; j++) {
+            const char *pre_id = r->prerequisiteRoadmaps[j];
+            // Verify the prerequisite roadmap exists
+            Roadmap *pre_roadmap = (Roadmap *)hashmap_get(state->roadmap_map, pre_id);
+            if (pre_roadmap) {
+                graph_add_edge(state->graph, pre_id, r->id, "prerequisite-roadmap", 1.0);
+            }
+        }
+    }
+
+    // Cycle detection for prerequisite roadmaps (Kahn's algorithm)
+    {
+        size_t roadmap_vertex_count = 0;
+        // Count roadmap vertices
+        if (state->graph && state->graph->vertices) {
+            ListNode *v_node = state->graph->vertices->head;
+            while (v_node) {
+                GraphVertex *v = (GraphVertex *)v_node->data;
+                if (strcmp(v->node_type, "roadmap") == 0) roadmap_vertex_count++;
+                v_node = v_node->next;
+            }
+        }
+
+        if (roadmap_vertex_count > 0) {
+            // Build adjacency list and in-degree for roadmap subgraph
+            char **roadmap_ids = (char **)malloc(roadmap_vertex_count * sizeof(char *));
+            int *in_degree = (int *)calloc(roadmap_vertex_count, sizeof(int));
+            size_t rm_idx = 0;
+
+            // Collect roadmap IDs
+            if (state->graph && state->graph->vertices) {
+                ListNode *v_node = state->graph->vertices->head;
+                while (v_node) {
+                    GraphVertex *v = (GraphVertex *)v_node->data;
+                    if (strcmp(v->node_type, "roadmap") == 0) {
+                        roadmap_ids[rm_idx++] = v->id;
+                    }
+                    v_node = v_node->next;
+                }
+            }
+
+            // Calculate in-degrees (pre_id points TO r->id, so r->id has the in-degree)
+            for (size_t i = 0; i < state->roadmap_count; i++) {
+                Roadmap *r = state->roadmaps[i];
+                for (size_t j = 0; j < r->prerequisite_roadmap_count; j++) {
+                    const char *pre_id = r->prerequisiteRoadmaps[j];
+                    // Find index of r->id (the dependent roadmap)
+                    for (size_t k = 0; k < roadmap_vertex_count; k++) {
+                        if (strcmp(roadmap_ids[k], r->id) == 0) {
+                            in_degree[k]++;
+                            break;
+                        }
+                    }
+                    (void)pre_id; // suppress unused warning
+                }
+            }
+
+            // Kahn's algorithm
+            int *queue = (int *)malloc(roadmap_vertex_count * sizeof(int));
+            int q_head = 0, q_tail = 0;
+            for (size_t i = 0; i < roadmap_vertex_count; i++) {
+                if (in_degree[i] == 0) {
+                    queue[q_tail++] = (int)i;
+                }
+            }
+
+            size_t processed = 0;
+            while (q_head < q_tail) {
+                int u_idx = queue[q_head++];
+                processed++;
+
+                // Find outgoing prerequisite-roadmap edges from this roadmap
+                Roadmap *r = (Roadmap *)hashmap_get(state->roadmap_map, roadmap_ids[u_idx]);
+                if (r) {
+                    for (size_t j = 0; j < r->prerequisite_roadmap_count; j++) {
+                        const char *pre_id = r->prerequisiteRoadmaps[j];
+                        // Find index of pre_id
+                        for (size_t k = 0; k < roadmap_vertex_count; k++) {
+                            if (strcmp(roadmap_ids[k], pre_id) == 0) {
+                                in_degree[k]--;
+                                if (in_degree[k] == 0) {
+                                    queue[q_tail++] = (int)k;
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (processed < roadmap_vertex_count) {
+                // Cycle detected - print warning
+                fprintf(stderr, "[WARNING] Cycle detected in prerequisite roadmap graph! Some prerequisite roadmaps may be unreachable.\n");
+            }
+
+            free(roadmap_ids);
+            free(in_degree);
+            free(queue);
+        }
+    }
+
     load_progress(state, data_dir);
     return state;
+}
+
+RelatedTopicsResult models_get_related_topics(AppState *state, const char *topic_id) {
+    RelatedTopicsResult result = {NULL, NULL, NULL, NULL, 0};
+
+    if (!state || !topic_id) return result;
+
+    Topic *t = (Topic *)hashmap_get(state->topic_map, topic_id);
+    if (!t) return result;
+
+    // Collect all concepts associated with this topic
+    // We need to find which concepts link to this topic
+    // Then find all other topics that share those concepts
+
+    // Since we have concept-topic edges in the graph, let's traverse
+    // First, let's find what topic_ids each concept has
+    // We'll iterate through all concepts and check if they link to our topic
+
+    size_t max_matches = state->concept_count * 10; // generous estimate
+    char **matched_topic_ids = (char **)calloc(max_matches, sizeof(char *));
+    char **matched_topic_titles = (char **)calloc(max_matches, sizeof(char *));
+    char **matched_concept_ids = (char **)calloc(max_matches, sizeof(char *));
+    char **matched_concept_names = (char **)calloc(max_matches, sizeof(char *));
+    size_t match_count = 0;
+
+    for (size_t i = 0; i < state->concept_count; i++) {
+        Concept *c = state->concepts[i];
+        // Check if this concept is linked to our topic
+        bool links_to_our_topic = false;
+        for (size_t j = 0; j < c->topic_count; j++) {
+            if (strcmp(c->topicIds[j], topic_id) == 0) {
+                links_to_our_topic = true;
+                break;
+            }
+        }
+
+        if (links_to_our_topic) {
+            // Find all other topics linked to this concept
+            for (size_t j = 0; j < c->topic_count; j++) {
+                const char *other_tid = c->topicIds[j];
+                // Skip our original topic
+                if (strcmp(other_tid, topic_id) == 0) continue;
+
+                // Check if we already added this topic
+                bool already_added = false;
+                for (size_t k = 0; k < match_count; k++) {
+                    if (matched_topic_ids[k] && strcmp(matched_topic_ids[k], other_tid) == 0) {
+                        already_added = true;
+                        break;
+                    }
+                }
+
+                if (!already_added) {
+                    // Find the topic in our state
+                    Topic *other_t = (Topic *)hashmap_get(state->topic_map, other_tid);
+                    if (other_t) {
+                        matched_topic_ids[match_count] = strdup(other_tid);
+                        matched_topic_titles[match_count] = strdup(other_t->title);
+                        matched_concept_ids[match_count] = strdup(c->id);
+                        matched_concept_names[match_count] = strdup(c->name);
+                        match_count++;
+                    }
+                }
+            }
+        }
+    }
+
+    result.topic_ids = matched_topic_ids;
+    result.topic_titles = matched_topic_titles;
+    result.concept_ids = matched_concept_ids;
+    result.concept_names = matched_concept_names;
+    result.count = match_count;
+
+    return result;
+}
+
+void models_free_related_topics(RelatedTopicsResult *result) {
+    if (!result) return;
+
+    if (result->topic_ids) {
+        for (size_t i = 0; i < result->count; i++) {
+            if (result->topic_ids[i]) free(result->topic_ids[i]);
+        }
+        free(result->topic_ids);
+    }
+    if (result->topic_titles) {
+        for (size_t i = 0; i < result->count; i++) {
+            if (result->topic_titles[i]) free(result->topic_titles[i]);
+        }
+        free(result->topic_titles);
+    }
+    if (result->concept_ids) {
+        for (size_t i = 0; i < result->count; i++) {
+            if (result->concept_ids[i]) free(result->concept_ids[i]);
+        }
+        free(result->concept_ids);
+    }
+    if (result->concept_names) {
+        for (size_t i = 0; i < result->count; i++) {
+            if (result->concept_names[i]) free(result->concept_names[i]);
+        }
+        free(result->concept_names);
+    }
 }
 
 void models_free(AppState *state) {
@@ -461,6 +704,14 @@ void models_free(AppState *state) {
                     }
                 }
                 free(r->sections);
+            }
+            if (r->prerequisiteRoadmaps) {
+                for (size_t j = 0; j < r->prerequisite_roadmap_count; j++) free(r->prerequisiteRoadmaps[j]);
+                free(r->prerequisiteRoadmaps);
+            }
+            if (r->relatedRoadmaps) {
+                for (size_t j = 0; j < r->related_roadmap_count; j++) free(r->relatedRoadmaps[j]);
+                free(r->relatedRoadmaps);
             }
             free(r);
         }

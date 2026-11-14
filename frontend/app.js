@@ -937,6 +937,38 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
             <div class="card-progress-fill" style="width: ${pct}%;"></div>
           </div>
 
+          <!-- Prerequisite Roadmaps -->
+          ${(roadmap.prerequisiteRoadmaps && roadmap.prerequisiteRoadmaps.length > 0) ? `
+          <div class="roadmap-prereqs" style="margin-bottom: 16px;">
+            <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              Prerequisite Roadmaps
+            </h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              ${roadmap.prerequisiteRoadmaps.map(preId => {
+                const pre = state.roadmapMap.get(preId);
+                return pre ? `<a href="#/roadmap/${preId}" class="badge" style="background: var(--bg-tertiary); color: var(--text-secondary);">${escapeHtml(pre.title)}</a>` : `<span class="badge" style="background: var(--bg-tertiary); color: var(--text-muted);">${escapeHtml(preId)}</span>`;
+              }).join('')}
+            </div>
+          </div>
+          ` : ''}
+
+          <!-- Related Roadmaps -->
+          ${(roadmap.relatedRoadmaps && roadmap.relatedRoadmaps.length > 0) ? `
+          <div class="roadmap-related" style="margin-bottom: 16px;">
+            <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Related Roadmaps
+            </h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              ${roadmap.relatedRoadmaps.map(relId => {
+                const rel = state.roadmapMap.get(relId);
+                return rel ? `<a href="#/roadmap/${relId}" class="badge" style="background: var(--bg-tertiary); color: var(--accent-cyan);">${escapeHtml(rel.title)}</a>` : `<span class="badge" style="background: var(--bg-tertiary); color: var(--text-muted);">${escapeHtml(relId)}</span>`;
+              }).join('')}
+            </div>
+          </div>
+          ` : ''}
+
           <!-- Controls Toolbar -->
           <div class="roadmap-toolbar">
             <div class="toolbar-group">
@@ -1334,9 +1366,10 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
     switchTopicTab('tab-overview');
 
     try {
-      const [topic, dependents] = await Promise.all([
+      const [topic, dependents, related] = await Promise.all([
         api.get(`/api/topics/${topicId}`),
-        api.get(`/api/topics/${topicId}/dependents`).catch(() => [])
+        api.get(`/api/topics/${topicId}/dependents`).catch(() => []),
+        api.get(`/api/topics/${topicId}/related`).catch(() => [])
       ]);
 
       document.getElementById('modal-topic-title').textContent = topic.title;
@@ -1348,7 +1381,8 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
 
       document.getElementById('modal-time-badge').textContent = `${topic.estimatedMinutes}m`;
       document.getElementById('modal-explanation-content').textContent = topic.explanation || topic.summary;
-      document.getElementById('modal-code-snippet').textContent = topic.codeExample || '// No code example provided';
+
+      // REMOVED: Code & Syntax section - modal-code-snippet no longer exists in UI
 
       // Status buttons
       const statusButtons = document.querySelectorAll('#modal-status-group .status-btn');
@@ -1408,6 +1442,74 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
           }).join('');
         } else {
           depSection.style.display = 'none';
+        }
+      }
+
+      // Related Topics - redesigned UI
+      const relatedList = document.getElementById('modal-related-topics-list');
+      if (relatedList) {
+        if (related && related.length > 0) {
+          // Deduplicate by topicId
+          const seen = new Set();
+          const filtered = related.filter(r => {
+            if (seen.has(r.topicId)) return false;
+            seen.add(r.topicId);
+            return true;
+          });
+
+          if (filtered.length > 0) {
+            relatedList.innerHTML = filtered.map(r => {
+              const conceptName = r.conceptName || undefined;
+              const roadmapId = r.roadmapId || undefined;
+              const conceptClass = conceptName ? 'related-concept' : '';
+              const conceptText = conceptName ? `via ${escapeHtml(conceptName)}` : '';
+              const roadmapText = roadmapId ? `(${escapeHtml(roadmapId)})` : '';
+
+              const cardStyle = `
+                padding: 10px 12px;
+                margin: 6px 0;
+                background: var(--bg-tertiary);
+                border-radius: var(--radius-md);
+                transition: all 0.2s ease;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+              `;
+
+              const cardHoverStyle = `
+                background: var(--bg-secondary);
+                transform: translateX(4px);
+              `;
+
+              const cardFocusStyle = `
+                outline: 2px solid var(--accent-cyan);
+                outline-offset: 2px;
+              `;
+
+              return `
+                <div
+                  class="related-topic-card"
+                  onclick="PathForge.openTopicDrawer('${r.topicId}')"
+                  tabindex="0"
+                  onkeydown="event.key==='Enter' && PathForge.openTopicDrawer('${r.topicId}')"
+                >
+                  <div style="display: flex; align-items: flex-start; gap: 12px;">
+                    <div style="flex: 1;">
+                      <div class="topic-title">${escapeHtml(r.topicTitle)}</div>
+                      ${roadmapText ? `<div class="roadmap-info">${roadmapText}</div>` : ''}
+                      ${conceptText ? `<div class="concept-info">${conceptText}</div>` : ''}
+                    </div>
+                    ${roadmapId ? `<span style="font-size: 11px; color: var(--accent-cyan);">Roadmap</span>` : ''}
+                  </div>
+                </div>
+              `;
+            }).join('');
+          } else {
+            relatedList.innerHTML = `<span class="muted-text">No related topics found</span>`;
+          }
+        } else {
+          relatedList.innerHTML = `<span class="muted-text">No related topics found</span>`;
         }
       }
 
@@ -1720,17 +1822,9 @@ If no existing roadmap reasonably aligns with their target role, respond with JS
       });
     }
 
-    const copyBtn = document.getElementById('btn-copy-code');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', () => {
-        const code = document.getElementById('modal-code-snippet').textContent;
-        navigator.clipboard.writeText(code).then(() => {
-          copyBtn.textContent = 'Copied!';
-          setTimeout(() => copyBtn.textContent = 'Copy', 2000);
-          showToast('Code copied to clipboard');
-        });
-      });
-    }
+    // Code & Syntax section removed - copy button no longer needed
+    // const copyBtn = document.getElementById('btn-copy-code');
+    // if (copyBtn) { ... }
 
     // Window resize redraws SVG connectors
     window.addEventListener('resize', () => {

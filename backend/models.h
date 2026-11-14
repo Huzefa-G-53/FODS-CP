@@ -52,6 +52,14 @@ typedef struct Roadmap {
     char icon[32];
     RoadmapSection *sections;
     size_t section_count;
+
+    // Prerequisite roadmaps (must complete before this roadmap)
+    char **prerequisiteRoadmaps;
+    size_t prerequisite_roadmap_count;
+
+    // Related roadmaps (complementary/parallel learning paths)
+    char **relatedRoadmaps;
+    size_t related_roadmap_count;
 } Roadmap;
 
 typedef struct Concept {
@@ -87,5 +95,17 @@ void models_free(AppState *state);
 bool models_save_progress(AppState *state, const char *data_dir);
 bool models_is_valid_topic_status(const char *status);
 bool models_set_topic_status(AppState *state, const char *topic_id, const char *status, const char *data_dir);
+
+// Related topics via shared concepts
+typedef struct RelatedTopicsResult {
+    char **topic_ids;
+    char **topic_titles;
+    char **concept_ids;
+    char **concept_names;
+    size_t count;
+} RelatedTopicsResult;
+
+RelatedTopicsResult models_get_related_topics(AppState *state, const char *topic_id);
+void models_free_related_topics(RelatedTopicsResult *result);
 
 #endif // PATHFORGE_MODELS_H

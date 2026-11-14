@@ -1,77 +1,88 @@
-=== ROADMAP ===
-id: c
+=== ROADMAP ===id: c
+prerequisiteRoadmaps: 
+relatedRoadmaps: systems-programmer,embedded-systems-engineer,computer-science-fundamentals
 type: language
 title: C Programming Language
 description: Master systems programming, manual memory management, pointers, and foundational computer architecture through C.
 level: Foundational
-estimatedHours: 60
+estimatedHours: 29
 icon: terminal
 --- SECTION ---
-id: c-basics
-title: Core Syntax & Foundations
-topics: c-syntax-basics,c-variables,c-control-flow,c-functions
-
+id: c-curr-getting-started-with-c
+title: Getting Started with C
+topics: c-curr-c-toolchain-and-first-program,c-curr-c-program-structure-and-standard-library
 --- SECTION ---
-id: c-memory
-title: Memory & Systems Architecture
-topics: c-pointers-memory,c-structs,c-dynamic-allocation,c-file-io
-
+id: c-curr-language-fundamentals
+title: Language Fundamentals
+topics: c-curr-types-variables-and-constants,c-curr-expressions-operators-and-conversions,c-curr-input-output-and-formatting,c-curr-control-flow,c-curr-functions-scope-and-lifetime
 --- SECTION ---
-id: c-practice
-title: Arrays, Build Tools & Core Data Structures
-topics: c-arrays-strings,c-preprocessor-build,c-linked-structures
+id: c-curr-arrays-strings-and-pointers
+title: Arrays, Strings and Pointers
+topics: c-curr-arrays-and-multidimensional-arrays,c-curr-c-strings-and-character-handling,c-curr-pointers-and-pointer-arithmetic,c-curr-dynamic-memory-and-ownership,c-curr-structures-unions-and-enumerations
+--- SECTION ---
+id: c-curr-modular-programming-and-data-handling
+title: Modular Programming and Data Handling
+topics: c-curr-preprocessor-and-header-design,c-curr-separate-compilation-and-linking,c-curr-file-i-o-and-command-line-arguments,c-curr-core-data-structures-in-c
+--- SECTION ---
+id: c-curr-debugging-testing-and-safe-c
+title: Debugging, Testing and Safe C
+topics: c-curr-compiler-diagnostics-and-debugging,c-curr-testing-and-runtime-analysis,c-curr-undefined-behavior-and-defensive-c
 
-
-=== ROADMAP ===
-id: java
+=== ROADMAP ===id: java
+prerequisiteRoadmaps: 
+relatedRoadmaps: backend-developer,android-developer,computer-science-fundamentals
 type: language
 title: Java Platform Engineering
 description: Learn enterprise software engineering, robust object-oriented programming, concurrency, and the JVM ecosystem.
 level: Intermediate
-estimatedHours: 75
+estimatedHours: 26
 icon: coffee
 --- SECTION ---
-id: java-basics
-title: Language Fundamentals
-topics: java-syntax-basics,java-variables,java-control-flow,java-methods
-
+id: java-curr-java-setup-and-language-foundations
+title: Java Setup and Language Foundations
+topics: java-curr-jdk-jvm-and-java-execution,java-curr-types-variables-and-operators,java-curr-control-flow-and-methods,java-curr-strings-arrays-and-basic-i-o
 --- SECTION ---
-id: java-oop
-title: Object Orientation & Runtime
-topics: java-classes-oop,java-collections-framework,java-exception-handling,java-multithreading
-
+id: java-curr-object-oriented-java
+title: Object-Oriented Java
+topics: java-curr-classes-objects-and-encapsulation,java-curr-inheritance-polymorphism-and-interfaces,java-curr-object-contracts-and-modern-types,java-curr-generics-and-type-safety
 --- SECTION ---
-id: java-engineering
-title: Generics, Databases & Testing
-topics: java-generics-streams,java-jdbc-database,java-build-testing
+id: java-curr-core-java-apis-and-programming-idioms
+title: Core Java APIs and Programming Idioms
+topics: java-curr-collections-framework,java-curr-exceptions-and-resource-management,java-curr-lambdas-functional-interfaces-and-streams,java-curr-date-time-i-o-and-networking-apis
+--- SECTION ---
+id: java-curr-jvm-concurrency-and-application-engineering
+title: JVM, Concurrency and Application Engineering
+topics: java-curr-jvm-runtime-and-memory,java-curr-threads-and-synchronization,java-curr-executors-and-concurrent-utilities,java-curr-jdbc-and-database-transactions,java-curr-build-testing-and-delivery
 
-
-=== ROADMAP ===
-id: python
+=== ROADMAP ===id: python
+prerequisiteRoadmaps: 
+relatedRoadmaps: ai-ml-engineer,machine-learning-engineer,data-scientist,data-engineer,backend-developer,computer-science-fundamentals
 type: language
 title: Python Development
 description: Modern Python for automation, backend APIs, data engineering, and scientific computation.
 level: Beginner to Advanced
-estimatedHours: 50
+estimatedHours: 23
 icon: code
 --- SECTION ---
-id: python-basics
-title: Fundamentals & Idioms
-topics: python-syntax-basics,python-variables,python-control-flow,python-functions
-
+id: python-curr-python-setup-and-core-syntax
+title: Python Setup and Core Syntax
+topics: python-curr-interpreter-environments-and-packages,python-curr-values-types-and-expressions,python-curr-control-flow-and-functions,python-curr-strings-and-text-processing
 --- SECTION ---
-id: python-structures
-title: Collections & Packaging
-topics: python-data-structures,python-modules-packages,python-file-io-json,python-virtual-environments
-
+id: python-curr-built-in-data-structures-and-program-design
+title: Built-in Data Structures and Program Design
+topics: python-curr-lists-tuples-and-sequence-operations,python-curr-dictionaries-sets-and-hashing,python-curr-functions-modules-and-packages,python-curr-classes-and-python-data-model
 --- SECTION ---
-id: python-practice
-title: Iterators, Testing & APIs
-topics: python-comprehensions-iterators,python-oop-testing,python-http-apis
+id: python-curr-files-errors-and-reusable-code
+title: Files, Errors and Reusable Code
+topics: python-curr-files-paths-and-serialization,python-curr-exceptions-and-context-managers,python-curr-iterators-and-generators,python-curr-decorators-and-resource-patterns
+--- SECTION ---
+id: python-curr-quality-networking-and-advanced-runtime
+title: Quality, Networking and Advanced Runtime
+topics: python-curr-testing-and-debugging,python-curr-type-hints-and-code-quality,python-curr-http-apis-and-application-configuration,python-curr-asynchronous-and-concurrent-python,python-curr-profiling-and-performance
 
-
-=== ROADMAP ===
-id: ai-ml-engineer
+=== ROADMAP ===id: ai-ml-engineer
+prerequisiteRoadmaps: python,computer-science-fundamentals,dsa
+relatedRoadmaps: machine-learning-engineer,data-scientist,mlops-engineer,llm-engineer
 type: profession
 title: AI & Machine Learning Engineer
 description: A comprehensive track from mathematical foundations and data manipulation to deep neural architectures and production model deployment.
@@ -93,76 +104,119 @@ id: aiml-production
 title: Evaluation, Experiments & Production
 topics: aiml-model-evaluation-metrics,aiml-model-deployment-onnx,aiml-experiment-tracking
 
-
-=== ROADMAP ===
-id: backend-developer
+=== ROADMAP ===id: backend-developer
+prerequisiteRoadmaps: computer-science-fundamentals,dsa
+relatedRoadmaps: fullstack-developer,devops-engineer,cloud-engineer,database-engineer,backend-development
 type: profession
 title: Backend Systems Developer
 description: Architect high-performance distributed backends, persistent databases, caching layers, secure authentication, and containerized microservices.
 level: Intermediate to Advanced
-estimatedHours: 160
+estimatedHours: 34
 icon: server
 --- SECTION ---
-id: backend-foundations
-title: Networking & API Design
-topics: backend-internet-protocols,backend-restful-api-design
-
+id: backend-developer-curr-programming-and-runtime-foundations
+title: Programming and Runtime Foundations
+topics: backend-developer-curr-backend-language-and-development-workflow,backend-developer-curr-linux-and-process-fundamentals,backend-developer-curr-concurrency-and-runtime-model
 --- SECTION ---
-id: backend-data
-title: Persistence, Security & Performance
-topics: backend-dev-subroadmap,backend-relational-databases-sql,backend-authentication-jwt-oauth,backend-caching-redis,backend-transactions-indexing,backend-rate-limiting
-
+id: backend-developer-curr-internet-and-api-foundations
+title: Internet and API Foundations
+topics: backend-developer-curr-internet-protocols-and-http,backend-developer-curr-rest-api-design-and-contracts,backend-developer-curr-webhooks-and-real-time-communication
 --- SECTION ---
-id: backend-quality
-title: Testing, Delivery & Operations
-topics: backend-automated-testing-cicd,backend-docker-containerization,backend-logging-observability
+id: backend-developer-curr-backend-application-architecture
+title: Backend Application Architecture
+topics: backend-developer-curr-request-lifecycle-and-application-layers,backend-developer-curr-configuration-validation-and-error-handling,backend-developer-curr-api-compatibility-and-rate-limiting
+--- SECTION ---
+id: backend-developer-curr-data-persistence-and-consistency
+title: Data Persistence and Consistency
+topics: backend-developer-curr-relational-modeling-and-sql,backend-developer-curr-transactions-and-concurrency-control,backend-developer-curr-indexes-and-query-performance,backend-developer-curr-orms-and-data-access-patterns
+--- SECTION ---
+id: backend-developer-curr-security-caching-and-integration
+title: Security, Caching and Integration
+topics: backend-developer-curr-authentication-and-authorization,backend-developer-curr-web-application-security,backend-developer-curr-caching-and-rate-control,backend-developer-curr-external-service-integration
+--- SECTION ---
+id: backend-developer-curr-testing-deployment-and-operations
+title: Testing, Deployment and Operations
+topics: backend-developer-curr-backend-testing,backend-developer-curr-background-jobs-and-messaging,backend-developer-curr-containers-and-ci-cd,backend-developer-curr-logging-metrics-and-tracing,backend-developer-curr-production-reliability-and-scaling
 
-
-=== ROADMAP ===
-id: fullstack-developer
+=== ROADMAP ===id: fullstack-developer
+prerequisiteRoadmaps: frontend-developer,backend-developer,dsa
+relatedRoadmaps: frontend-developer,devops-engineer,cloud-engineer
 type: profession
 title: Full-Stack Web Developer
 description: Master end-to-end web engineering from client DOM manipulation and state management to server-side APIs, database modeling, and cloud deployments.
 level: Intermediate
-estimatedHours: 200
+estimatedHours: 23
 icon: layers
 --- SECTION ---
-id: fullstack-frontend
-title: Web Platform, Browser & UX
-topics: fullstack-web-architecture,fullstack-dom-api,fullstack-state-management,fullstack-accessibility,fullstack-frontend-testing,fullstack-form-validation
-
+id: fullstack-developer-curr-web-foundations-and-developer-workflow
+title: Web Foundations and Developer Workflow
+topics: fullstack-developer-curr-how-the-web-works,fullstack-developer-curr-git-command-line-and-project-tooling
 --- SECTION ---
-id: fullstack-application
-title: Application Architecture & APIs
-topics: fullstack-dsa-subroadmap,fullstack-backend-integration,fullstack-api-security-cors
-
+id: fullstack-developer-curr-frontend-development
+title: Frontend Development
+topics: fullstack-developer-curr-semantic-html-and-forms,fullstack-developer-curr-css-foundations-and-responsive-layout,fullstack-developer-curr-javascript-and-browser-apis,fullstack-developer-curr-component-architecture-and-state,fullstack-developer-curr-accessibility-and-frontend-testing
 --- SECTION ---
-id: fullstack-data-delivery
-title: Data & Deployment
-topics: fullstack-relational-nosql-db,fullstack-cloud-deployment
+id: fullstack-developer-curr-backend-and-api-development
+title: Backend and API Development
+topics: fullstack-developer-curr-server-runtime-and-request-lifecycle,fullstack-developer-curr-rest-apis-and-client-integration,fullstack-developer-curr-authentication-and-application-security
+--- SECTION ---
+id: fullstack-developer-curr-data-and-persistence
+title: Data and Persistence
+topics: fullstack-developer-curr-relational-data-modeling-and-sql,fullstack-developer-curr-data-access-and-nosql-awareness
+--- SECTION ---
+id: fullstack-developer-curr-testing-delivery-and-production
+title: Testing, Delivery and Production
+topics: fullstack-developer-curr-full-stack-testing-strategy,fullstack-developer-curr-build-deployment-and-configuration,fullstack-developer-curr-observability-reliability-and-architecture
 
-
-=== ROADMAP ===
-id: dsa
+=== ROADMAP ===id: dsa
+prerequisiteRoadmaps: computer-science-fundamentals
+relatedRoadmaps: ai-ml-engineer,backend-developer,fullstack-developer,machine-learning-engineer,computer-science-fundamentals
 type: subroadmap
 title: Data Structures & Algorithms Sub-Roadmap
 description: The fundamental building blocks of computer science: asymptotic notation, linear sequences, trees, graphs, hashing, and dynamic programming.
 level: Core
-estimatedHours: 80
+estimatedHours: 55
 icon: git-commit
 --- SECTION ---
-id: dsa-complexity
-title: Complexity & Linear Structures
-topics: dsa-complexity-arrays,dsa-linked-lists-stacks-queues
-
+id: dsa-curr-programming-and-mathematical-foundations
+title: Programming and Mathematical Foundations
+topics: dsa-curr-programming-prerequisites,dsa-curr-discrete-mathematics-for-dsa,dsa-curr-algorithmic-problem-solving
 --- SECTION ---
-id: dsa-non-linear
-title: Trees, Hashing & Graph Traversal
-topics: dsa-trees-hashing,dsa-graphs-traversal
+id: dsa-curr-complexity-analysis
+title: Complexity Analysis
+topics: dsa-curr-time-and-space-complexity,dsa-curr-analyzing-loops-and-recurrences,dsa-curr-amortized-analysis
+--- SECTION ---
+id: dsa-curr-linear-data-structures
+title: Linear Data Structures
+topics: dsa-curr-arrays-and-dynamic-arrays,dsa-curr-strings,dsa-curr-linked-lists,dsa-curr-stacks-queues-and-deques
+--- SECTION ---
+id: dsa-curr-searching-sorting-and-selection
+title: Searching, Sorting and Selection
+topics: dsa-curr-searching-algorithms,dsa-curr-comparison-sorting,dsa-curr-non-comparison-sorting,dsa-curr-order-statistics-and-selection
+--- SECTION ---
+id: dsa-curr-hashing-and-priority-structures
+title: Hashing and Priority Structures
+topics: dsa-curr-hash-tables-and-hash-maps,dsa-curr-heaps-and-priority-queues
+--- SECTION ---
+id: dsa-curr-trees-and-hierarchical-structures
+title: Trees and Hierarchical Structures
+topics: dsa-curr-tree-fundamentals-and-traversals,dsa-curr-binary-search-trees,dsa-curr-balanced-search-trees,dsa-curr-tries-and-prefix-structures
+--- SECTION ---
+id: dsa-curr-graph-fundamentals-and-algorithms
+title: Graph Fundamentals and Algorithms
+topics: dsa-curr-graph-models-and-representations,dsa-curr-bfs-and-dfs,dsa-curr-graph-properties-and-ordering,dsa-curr-shortest-path-algorithms,dsa-curr-minimum-spanning-trees-and-disjoint-sets
+--- SECTION ---
+id: dsa-curr-algorithm-design-techniques
+title: Algorithm Design Techniques
+topics: dsa-curr-divide-and-conquer,dsa-curr-greedy-algorithms,dsa-curr-backtracking,dsa-curr-dynamic-programming,dsa-curr-randomized-algorithms
+--- SECTION ---
+id: dsa-curr-common-problem-solving-patterns-and-advanced-topics
+title: Common Problem-Solving Patterns and Advanced Topics
+topics: dsa-curr-two-pointers-sliding-windows-and-prefix-sums,dsa-curr-monotonic-structures-and-interval-patterns,dsa-curr-range-query-structures,dsa-curr-string-matching-algorithms,dsa-curr-advanced-graph-topics,dsa-curr-practice-analysis-and-review
 
-
-=== ROADMAP ===
-id: machine-learning
+=== ROADMAP ===id: machine-learning
+prerequisiteRoadmaps: python,dsa,computer-science-fundamentals
+relatedRoadmaps: ai-ml-engineer,machine-learning-engineer,data-scientist,mlops-engineer
 type: subroadmap
 title: Machine Learning Pipeline Sub-Roadmap
 description: Standardized ML workflow from raw ingestion and feature transformations to cross-validation and hyperparameter tuning.
@@ -179,55 +233,69 @@ id: ml-modeling
 title: Model Training & Validation
 topics: aiml-supervised-learning,ml-model-selection,aiml-model-evaluation-metrics
 
-
-=== ROADMAP ===
-id: backend-development
+=== ROADMAP ===id: backend-development
+prerequisiteRoadmaps: backend-developer,computer-science-fundamentals
+relatedRoadmaps: devops-engineer,cloud-engineer,database-engineer,site-reliability-engineer
 type: subroadmap
 title: Backend Engineering Sub-Roadmap
 description: In-depth specialization into API gateways, database transactions, caching strategies, and stateless token security.
 level: Specialized
-estimatedHours: 90
+estimatedHours: 19
 icon: database
 --- SECTION ---
-id: backend-core-apis
-title: API Contracts & Architecture
-topics: backend-internet-protocols,backend-restful-api-design,backend-api-versioning
-
+id: backend-development-curr-api-contract-engineering
+title: API Contract Engineering
+topics: backend-development-curr-resource-modeling-and-http-semantics,backend-development-curr-validation-pagination-and-error-contracts,backend-development-curr-versioning-and-compatibility
 --- SECTION ---
-id: backend-storage-cache
-title: Data, Transactions & Caching
-topics: backend-relational-databases-sql,backend-transactions-indexing,backend-caching-redis,backend-cache-design
-
+id: backend-development-curr-persistence-correctness-and-performance
+title: Persistence Correctness and Performance
+topics: backend-development-curr-transactions-and-isolation,backend-development-curr-schema-evolution-and-migrations,backend-development-curr-query-plans-and-index-engineering,backend-development-curr-connection-and-data-access-management
 --- SECTION ---
-id: backend-security-ops
-title: Security & Reliability
-topics: backend-authentication-jwt-oauth,backend-authz-secrets,backend-rate-limiting,backend-logging-observability
+id: backend-development-curr-caching-and-distributed-coordination
+title: Caching and Distributed Coordination
+topics: backend-development-curr-cache-patterns-and-invalidation,backend-development-curr-cache-failure-modes,backend-development-curr-queues-and-idempotent-processing
+--- SECTION ---
+id: backend-development-curr-identity-resilience-and-production-diagnostics
+title: Identity, Resilience and Production Diagnostics
+topics: backend-development-curr-sessions-tokens-and-authorization,backend-development-curr-resilient-service-integration,backend-development-curr-observability-and-slos,backend-development-curr-advanced-verification
 
-=== ROADMAP ===
-id: frontend-developer
+=== ROADMAP ===id: frontend-developer
+prerequisiteRoadmaps: computer-science-fundamentals
+relatedRoadmaps: fullstack-developer,devops-engineer,qa-test-automation
 type: profession
 title: Frontend Developer
 description: Build accessible, responsive browser applications using HTML, CSS, JavaScript, component frameworks, testing, and performance practices.
 level: Beginner to Advanced
-estimatedHours: 140
+estimatedHours: 29
 icon: panels-top-left
 --- SECTION ---
-id: frontend-foundations
-title: Web Platform Foundations
-topics: frontend-html-semantics,frontend-css-layout,frontend-javascript-browser
-
+id: frontend-developer-curr-web-platform-and-development-tools
+title: Web Platform and Development Tools
+topics: frontend-developer-curr-web-standards-and-browser-basics,frontend-developer-curr-version-control-and-frontend-tooling
 --- SECTION ---
-id: frontend-frameworks
-title: Components and Application State
-topics: frontend-react-components,frontend-state-effects,frontend-routing-data
-
+id: frontend-developer-curr-html-and-accessible-structure
+title: HTML and Accessible Structure
+topics: frontend-developer-curr-semantic-html,frontend-developer-curr-forms-and-native-controls,frontend-developer-curr-accessibility-tree-and-content-semantics
 --- SECTION ---
-id: frontend-quality
-title: Accessibility and Production Quality
-topics: frontend-accessibility,frontend-performance-testing
+id: frontend-developer-curr-css-and-visual-layout
+title: CSS and Visual Layout
+topics: frontend-developer-curr-css-fundamentals,frontend-developer-curr-typography-color-and-visual-styling,frontend-developer-curr-modern-layout-and-responsive-design,frontend-developer-curr-motion-and-advanced-css
+--- SECTION ---
+id: frontend-developer-curr-javascript-and-browser-apis
+title: JavaScript and Browser APIs
+topics: frontend-developer-curr-javascript-language-fundamentals,frontend-developer-curr-asynchronous-javascript,frontend-developer-curr-dom-events-and-browser-apis
+--- SECTION ---
+id: frontend-developer-curr-frontend-application-engineering
+title: Frontend Application Engineering
+topics: frontend-developer-curr-typescript-for-ui-applications,frontend-developer-curr-component-frameworks-and-architecture,frontend-developer-curr-server-state-and-data-fetching
+--- SECTION ---
+id: frontend-developer-curr-accessibility-testing-and-performance
+title: Accessibility, Testing and Performance
+topics: frontend-developer-curr-accessible-interaction-and-wcag-practice,frontend-developer-curr-frontend-testing,frontend-developer-curr-performance-and-production,frontend-developer-curr-frontend-security-and-privacy
 
-=== ROADMAP ===
-id: devops-engineer
+=== ROADMAP ===id: devops-engineer
+prerequisiteRoadmaps: computer-science-fundamentals,backend-developer
+relatedRoadmaps: cloud-engineer,site-reliability-engineer,backend-developer,backend-development
 type: profession
 title: DevOps Engineer
 description: Automate software delivery and infrastructure using version control, CI/CD, containers, orchestration, infrastructure as code, observability, and reliability practices.
@@ -237,20 +305,27 @@ icon: workflow
 --- SECTION ---
 id: devops-foundations
 title: Operating Systems and Collaboration
-topics: devops-linux-shell,devops-git-workflows,devops-networking
-
+topics: devops-linux-shell,devops-git-workflows,devops-networking,devops-filesystem-permissions,devops-process-service-management
 --- SECTION ---
 id: devops-delivery
-title: Build, Containers and Orchestration
-topics: devops-ci-cd,devops-containers,devops-kubernetes
-
+title: Build and Continuous Delivery
+topics: devops-ci-cd,devops-build-artifacts,devops-pipeline-security
 --- SECTION ---
-id: devops-reliability
-title: Infrastructure and Reliability
-topics: devops-iac,devops-observability
+id: devops-containers
+title: Containers and Orchestration
+topics: devops-containers,devops-kubernetes,devops-container-networking,devops-kubernetes-operations
+--- SECTION ---
+id: devops-provisioning
+title: Infrastructure as Code and Configuration
+topics: devops-iac,devops-configuration-management,devops-secrets-config
+--- SECTION ---
+id: devops-operations
+title: Observability and Production Operations
+topics: devops-observability,devops-release-strategies,devops-backup-recovery,devops-platform-engineering
 
-=== ROADMAP ===
-id: cybersecurity-analyst
+=== ROADMAP ===id: cybersecurity-analyst
+prerequisiteRoadmaps: computer-science-fundamentals,network-engineer
+relatedRoadmaps: devsecops-engineer,network-engineer,backend-developer
 type: profession
 title: Cybersecurity Analyst
 description: Learn defensive security fundamentals, asset and identity management, vulnerability assessment, secure development, monitoring, and incident response.
@@ -259,21 +334,24 @@ estimatedHours: 160
 icon: shield-check
 --- SECTION ---
 id: cyber-foundations
-title: Security Principles and Systems
-topics: cyber-security-basics,cyber-network-security,cyber-identity-access
-
+title: Security Principles, Assets and Threats
+topics: cyber-security-basics,cyber-risk-assessment,cyber-network-security,cyber-identity-access
 --- SECTION ---
-id: cyber-defensive-practice
-title: Secure Applications and Vulnerability Management
-topics: cyber-web-vulnerabilities,cyber-vulnerability-management,cyber-secure-development
-
+id: cyber-vulnerability
+title: Vulnerability and Application Security
+topics: cyber-web-vulnerabilities,cyber-vulnerability-management,cyber-secure-development,cyber-cloud-security
 --- SECTION ---
-id: cyber-operations
-title: Monitoring and Incident Response
-topics: cyber-logging-siem,cyber-incident-response
+id: cyber-detection
+title: Security Monitoring and Detection Engineering
+topics: cyber-logging-siem,cyber-detection-engineering,cyber-threat-intelligence
+--- SECTION ---
+id: cyber-response
+title: Incident Response and Forensic Readiness
+topics: cyber-incident-response,cyber-digital-forensics,cyber-threat-hunting
 
-=== ROADMAP ===
-id: cloud-engineer
+=== ROADMAP ===id: cloud-engineer
+prerequisiteRoadmaps: computer-science-fundamentals,network-engineer
+relatedRoadmaps: devops-engineer,site-reliability-engineer,backend-developer,backend-development
 type: profession
 title: Cloud Engineer
 description: Design, provision, secure, and operate cloud workloads using networking, compute, storage, identity, automation, and reliability practices.
@@ -282,113 +360,144 @@ estimatedHours: 150
 icon: cloud
 --- SECTION ---
 id: cloud-foundations
-title: Cloud Concepts and Networking
-topics: cloud-service-models,cloud-networking,cloud-iam
-
+title: Cloud Architecture and Shared Responsibility
+topics: cloud-service-models,cloud-regions-availability,cloud-networking,cloud-iam
 --- SECTION ---
-id: cloud-platform
-title: Compute, Storage and Automation
-topics: cloud-compute-storage,cloud-serverless,cloud-iac
-
+id: cloud-compute
+title: Compute, Storage and Application Hosting
+topics: cloud-compute-storage,cloud-serverless,cloud-managed-services
+--- SECTION ---
+id: cloud-provisioning
+title: Cloud Provisioning and Governance
+topics: cloud-iac,cloud-landing-zones,cloud-policy-governance
+--- SECTION ---
+id: cloud-security
+title: Cloud Security and Data Protection
+topics: cloud-security-posture,cloud-data-protection
 --- SECTION ---
 id: cloud-operations
-title: Security, Cost and Reliability
-topics: cloud-observability,cloud-cost-reliability
+title: Cloud Monitoring, Cost and Reliability
+topics: cloud-observability,cloud-cost-reliability,cloud-resilience-design
 
-=== ROADMAP ===
-id: database-engineer
+=== ROADMAP ===id: database-engineer
+prerequisiteRoadmaps: computer-science-fundamentals,dsa
+relatedRoadmaps: backend-developer,data-engineer,data-analyst,backend-development
 type: profession
 title: Database Engineer
 description: Design reliable data models and operate relational and non-relational databases with query tuning, transactions, migrations, backup, and access controls.
 level: Intermediate to Advanced
-estimatedHours: 145
+estimatedHours: 34
 icon: database
 --- SECTION ---
-id: database-modeling
-title: Data Modeling and SQL
-topics: db-modeling-normalization,db-sql-querying,db-transactions
-
+id: database-engineer-curr-data-modeling-and-relational-foundations
+title: Data Modeling and Relational Foundations
+topics: database-engineer-curr-relational-model-keys-and-constraints,database-engineer-curr-er-modeling-and-schema-design,database-engineer-curr-normalization-and-functional-dependencies,database-engineer-curr-sql-fundamentals,database-engineer-curr-advanced-sql-and-analytical-queries
 --- SECTION ---
-id: database-performance
-title: Indexes and Database Operations
-topics: db-indexes-query-plans,db-migrations,db-backup-recovery
-
+id: database-engineer-curr-transactions-and-database-concurrency
+title: Transactions and Database Concurrency
+topics: database-engineer-curr-acid-and-transaction-boundaries,database-engineer-curr-isolation-levels-and-anomalies,database-engineer-curr-locking-mvcc-and-deadlocks
 --- SECTION ---
-id: database-specialization
-title: NoSQL and Data Access Security
-topics: db-nosql-modeling,db-security-access
+id: database-engineer-curr-indexes-and-query-performance
+title: Indexes and Query Performance
+topics: database-engineer-curr-index-structures-and-trade-offs,database-engineer-curr-query-planning-and-execution,database-engineer-curr-query-and-workload-tuning
+--- SECTION ---
+id: database-engineer-curr-database-engine-internals
+title: Database Engine Internals
+topics: database-engineer-curr-storage-pages-and-buffer-management,database-engineer-curr-write-ahead-logging-and-recovery,database-engineer-curr-vacuuming-statistics-and-maintenance
+--- SECTION ---
+id: database-engineer-curr-database-development-and-administration
+title: Database Development and Administration
+topics: database-engineer-curr-drivers-pools-and-database-apis,database-engineer-curr-schema-migrations-and-deployment,database-engineer-curr-roles-privileges-and-configuration,database-engineer-curr-monitoring-and-capacity-planning
+--- SECTION ---
+id: database-engineer-curr-reliability-security-and-distributed-data
+title: Reliability, Security and Distributed Data
+topics: database-engineer-curr-backup-and-point-in-time-recovery,database-engineer-curr-replication-and-high-availability,database-engineer-curr-database-security-and-governance,database-engineer-curr-nosql-data-models,database-engineer-curr-partitioning-and-distributed-databases
 
-=== ROADMAP ===
-id: android-developer
+=== ROADMAP ===id: android-developer
+prerequisiteRoadmaps: computer-science-fundamentals,java
+relatedRoadmaps: backend-developer,fullstack-developer,qa-test-automation
 type: profession
 title: Android Developer
-description: Build Android applications using Kotlin, Android platform components, Jetpack libraries, persistence, testing, and release practices.
+description: Build native Android applications with Kotlin, Jetpack Compose, platform components, lifecycle-aware architecture, background work, testing, accessibility, and release practices.
 level: Beginner to Advanced
-estimatedHours: 150
+estimatedHours: 65
 icon: smartphone
+--- SECTION ---
+id: android-platform
+title: Android Platform and Project Foundations
+topics: android-platform-components,android-studio-project,android-lifecycle-navigation
 --- SECTION ---
 id: android-kotlin
-title: Kotlin and Android Foundations
-topics: android-kotlin-language,android-studio-project,android-compose-ui
-
+title: Kotlin and Native UI Development
+topics: android-kotlin-language,android-compose-ui,android-coroutines
 --- SECTION ---
 id: android-architecture
-title: App Architecture and Data
-topics: android-lifecycle-navigation,android-coroutines,android-persistence
-
+title: Application Architecture and Data
+topics: android-architecture-patterns,android-persistence,android-networking
 --- SECTION ---
 id: android-quality
-title: Networking, Testing and Release
-topics: android-networking,android-testing-release
+title: Background Work, Quality and Release
+topics: android-background-work,android-performance-accessibility,android-testing-release
 
-=== ROADMAP ===
-id: ios-developer
+=== ROADMAP ===id: ios-developer
+prerequisiteRoadmaps: computer-science-fundamentals
+relatedRoadmaps: backend-developer,fullstack-developer,qa-test-automation
 type: profession
 title: iOS Developer
-description: Develop native Apple-platform applications with Swift, SwiftUI, application lifecycle management, persistence, networking, testing, and distribution.
+description: Build native iOS applications with Swift, SwiftUI, Apple platform services, structured concurrency, persistence, accessibility, testing, privacy, and distribution.
 level: Beginner to Advanced
-estimatedHours: 150
+estimatedHours: 65
 icon: smartphone
 --- SECTION ---
+id: ios-platform
+title: Apple Platform and Project Foundations
+topics: ios-apple-platform-foundations,ios-xcode-project,ios-navigation-state
+--- SECTION ---
 id: ios-swift
-title: Swift and UI Foundations
-topics: ios-swift-language,ios-xcode-project,ios-swiftui
-
+title: Swift and Native UI Development
+topics: ios-swift-language,ios-swiftui,ios-concurrency
 --- SECTION ---
 id: ios-application
-title: Application Data and Concurrency
-topics: ios-navigation-state,ios-concurrency,ios-persistence-networking
-
+title: Application Architecture and Data
+topics: ios-application-architecture,ios-persistence-networking,ios-background-notifications
 --- SECTION ---
 id: ios-quality
-title: Testing and Distribution
-topics: ios-testing,ios-release-privacy
+title: Accessibility, Testing and Distribution
+topics: ios-accessibility-performance,ios-testing,ios-release-privacy
 
-=== ROADMAP ===
-id: qa-test-automation
+=== ROADMAP ===id: qa-test-automation
+prerequisiteRoadmaps: computer-science-fundamentals
+relatedRoadmaps: frontend-developer,backend-developer,devops-engineer
 type: profession
 title: QA and Test Automation Engineer
 description: Design test strategies, automate unit/API/browser tests, manage test data, integrate checks into CI, and report product risk clearly.
 level: Beginner to Advanced
-estimatedHours: 135
+estimatedHours: 28
 icon: test-tube
 --- SECTION ---
-id: qa-fundamentals
-title: Testing Foundations
-topics: qa-testing-principles,qa-test-pyramid,qa-bug-reporting
-
+id: qa-test-automation-curr-testing-foundations-and-quality-practices
+title: Testing Foundations and Quality Practices
+topics: qa-test-automation-curr-software-testing-fundamentals,qa-test-automation-curr-sdlc-test-levels-and-test-types,qa-test-automation-curr-test-planning-and-risk-analysis,qa-test-automation-curr-defect-management-and-test-documentation
 --- SECTION ---
-id: qa-automation
-title: Automation Frameworks
-topics: qa-pytest-unit,qa-api-testing,qa-browser-testing
-
+id: qa-test-automation-curr-test-design-techniques
+title: Test Design Techniques
+topics: qa-test-automation-curr-black-box-test-techniques,qa-test-automation-curr-white-box-test-techniques,qa-test-automation-curr-experience-based-and-exploratory-testing
 --- SECTION ---
-id: qa-delivery
-title: CI and Quality Engineering
-topics: qa-ci-quality-gates,qa-nonfunctional
+id: qa-test-automation-curr-programming-and-test-tooling
+title: Programming and Test Tooling
+topics: qa-test-automation-curr-programming-for-test-automation,qa-test-automation-curr-git-http-and-sql-for-testers,qa-test-automation-curr-test-framework-fundamentals
+--- SECTION ---
+id: qa-test-automation-curr-api-integration-and-browser-automation
+title: API, Integration and Browser Automation
+topics: qa-test-automation-curr-api-and-contract-testing,qa-test-automation-curr-browser-automation,qa-test-automation-curr-automation-framework-design,qa-test-automation-curr-flaky-test-diagnosis
+--- SECTION ---
+id: qa-test-automation-curr-ci-non-functional-and-security-testing
+title: CI, Non-Functional and Security Testing
+topics: qa-test-automation-curr-ci-test-pipelines-and-quality-gates,qa-test-automation-curr-performance-and-reliability-testing,qa-test-automation-curr-security-and-accessibility-testing,qa-test-automation-curr-advanced-quality-engineering
 
-=== ROADMAP ===
-id: data-engineer
+=== ROADMAP ===id: data-engineer
+prerequisiteRoadmaps: computer-science-fundamentals,python,database-engineer
+relatedRoadmaps: data-analyst,data-scientist,mlops-engineer,backend-development
 type: profession
 title: Data Engineer
 description: Build dependable data ingestion, transformation, storage, orchestration, and quality pipelines for analytics and machine learning workloads.
@@ -410,8 +519,9 @@ id: data-eng-production
 title: Quality and Production Operations
 topics: data-eng-data-quality,data-eng-storage-lakehouse
 
-=== ROADMAP ===
-id: data-analyst
+=== ROADMAP ===id: data-analyst
+prerequisiteRoadmaps: computer-science-fundamentals
+relatedRoadmaps: data-engineer,data-scientist,database-engineer
 type: profession
 title: Data Analyst
 description: Turn raw data into defensible insights using SQL, statistics, data cleaning, visualization, dashboards, and clear communication.
@@ -433,63 +543,75 @@ id: analyst-decision
 title: Experimentation and Communication
 topics: analyst-hypothesis-testing,analyst-storytelling
 
-=== ROADMAP ===
-id: computer-science-fundamentals
+=== ROADMAP ===id: computer-science-fundamentals
+prerequisiteRoadmaps: 
+relatedRoadmaps: dsa,systems-programmer,backend-developer,ai-ml-engineer,machine-learning-engineer
 type: skill
 title: Computer Science Fundamentals
 description: Build a durable foundation in algorithms, operating systems, networking, databases, architecture, and software engineering concepts.
 level: Foundational to Intermediate
-estimatedHours: 160
+estimatedHours: 33
 icon: binary
 --- SECTION ---
-id: cs-algorithms
-title: Algorithms and Data Structures
-topics: cs-complexity,cs-linear-structures,cs-trees-graphs
-
+id: computer-science-fundamentals-curr-mathematics-and-logic
+title: Mathematics and Logic
+topics: computer-science-fundamentals-curr-discrete-mathematics,computer-science-fundamentals-curr-probability-and-statistics-foundations,computer-science-fundamentals-curr-boolean-algebra-and-logic
 --- SECTION ---
-id: cs-systems
-title: Systems and Networking
-topics: cs-operating-systems,cs-computer-architecture,cs-network-protocols
-
+id: computer-science-fundamentals-curr-data-representation-and-computer-architecture
+title: Data Representation and Computer Architecture
+topics: computer-science-fundamentals-curr-number-systems-and-data-representation,computer-science-fundamentals-curr-digital-logic-and-circuits,computer-science-fundamentals-curr-cpu-and-instruction-execution,computer-science-fundamentals-curr-memory-hierarchy-and-performance
 --- SECTION ---
-id: cs-data-engineering
-title: Databases and Software Engineering
-topics: cs-database-principles,cs-software-design
+id: computer-science-fundamentals-curr-programming-languages-and-algorithms
+title: Programming Languages and Algorithms
+topics: computer-science-fundamentals-curr-programming-paradigms-and-language-concepts,computer-science-fundamentals-curr-compiler-and-runtime-concepts,computer-science-fundamentals-curr-data-structures-and-algorithm-analysis
+--- SECTION ---
+id: computer-science-fundamentals-curr-operating-systems
+title: Operating Systems
+topics: computer-science-fundamentals-curr-processes-threads-and-system-calls,computer-science-fundamentals-curr-cpu-scheduling-and-synchronization,computer-science-fundamentals-curr-memory-management,computer-science-fundamentals-curr-file-systems-and-i-o
+--- SECTION ---
+id: computer-science-fundamentals-curr-networking-and-internet-systems
+title: Networking and Internet Systems
+topics: computer-science-fundamentals-curr-network-models-and-link-layer,computer-science-fundamentals-curr-ip-addressing-and-routing,computer-science-fundamentals-curr-transport-and-application-protocols
+--- SECTION ---
+id: computer-science-fundamentals-curr-databases-software-engineering-and-security
+title: Databases, Software Engineering and Security
+topics: computer-science-fundamentals-curr-database-system-foundations,computer-science-fundamentals-curr-software-engineering-practices,computer-science-fundamentals-curr-security-fundamentals,computer-science-fundamentals-curr-distributed-systems-foundations
 
-=== ROADMAP ===
-id: game-developer
+=== ROADMAP ===id: game-developer
+prerequisiteRoadmaps: computer-science-fundamentals,c,dsa
+relatedRoadmaps: systems-programmer,embedded-systems-engineer,software-architect
 type: profession
 title: Game Developer
-description: Learn real-time game programming, engine workflows, input, scenes, physics, animation, optimization, and gameplay testing.
+description: Build interactive games using real-time programming, game mathematics, engine workflows, gameplay systems, physics, AI, content pipelines, multiplayer concepts, and performance profiling.
 level: Beginner to Advanced
-estimatedHours: 150
+estimatedHours: 75
 icon: gamepad-2
 --- SECTION ---
 id: game-foundations
-title: Programming and Engine Foundations
-topics: game-programming-basics,game-engine-workflow,game-input-ui
-
+title: Programming, Mathematics and Engine Foundations
+topics: game-programming-basics,game-math-rendering-foundations,game-engine-workflow
 --- SECTION ---
 id: gameplay-systems
-title: Gameplay and Simulation
-topics: game-physics-collision,game-animation-state,game-ai-pathfinding
-
+title: Gameplay, Physics and AI
+topics: game-input-ui,game-physics-collision,game-animation-state,game-ai-pathfinding
+--- SECTION ---
+id: game-content
+title: Content, Audio and Persistence
+topics: game-assets-pipeline,game-audio-save-data,game-design-content-tools
 --- SECTION ---
 id: game-quality
-title: Assets, Optimization and Delivery
-topics: game-assets-pipeline,game-profiling-testing
+title: Multiplayer, Profiling and Delivery
+topics: game-networked-multiplayer,game-profiling-testing
 
-
-
-=== ROADMAP ===
-id: machine-learning-engineer
+=== ROADMAP ===id: machine-learning-engineer
+prerequisiteRoadmaps: python,dsa,computer-science-fundamentals,machine-learning
+relatedRoadmaps: ai-ml-engineer,data-scientist,mlops-engineer,llm-engineer
 type: profession
 title: Machine Learning Engineer
 description: Build, evaluate, and deploy predictive models using sound data preparation, statistical validation, feature engineering, and model-serving practices.
 level: Intermediate to Advanced
 estimatedHours: 180
 icon: brain-circuit
-
 --- SECTION ---
 id: ml-eng-foundations
 title: Data and Modeling Foundations
@@ -505,15 +627,15 @@ id: ml-eng-production
 title: Deployment and Monitoring
 topics: mleng-serving,mleng-monitoring
 
-=== ROADMAP ===
-id: ai-engineer
+=== ROADMAP ===id: ai-engineer
+prerequisiteRoadmaps: python,computer-science-fundamentals,machine-learning
+relatedRoadmaps: ai-ml-engineer,llm-engineer,mlops-engineer,machine-learning-engineer
 type: profession
 title: AI Engineer
 description: Integrate machine-learning models and AI services into reliable applications, with attention to evaluation, tool integration, privacy, latency, and cost.
 level: Intermediate to Advanced
 estimatedHours: 150
 icon: bot
-
 --- SECTION ---
 id: ai-eng-foundations
 title: AI Application Foundations
@@ -529,15 +651,15 @@ id: ai-eng-quality
 title: Evaluation and Operations
 topics: aieng-evaluation,aieng-security-cost
 
-=== ROADMAP ===
-id: llm-engineer
+=== ROADMAP ===id: llm-engineer
+prerequisiteRoadmaps: ai-engineer,python,computer-science-fundamentals
+relatedRoadmaps: ai-engineer,machine-learning-engineer,mlops-engineer,ai-ml-engineer
 type: profession
 title: LLM Engineer
 description: Develop applications powered by large language models, including prompt design, retrieval-augmented generation, evaluation, and safe production deployment.
 level: Intermediate to Advanced
 estimatedHours: 160
 icon: messages-square
-
 --- SECTION ---
 id: llm-foundations
 title: LLM Fundamentals
@@ -553,15 +675,15 @@ id: llm-production
 title: Evaluation and Serving
 topics: llme-evaluation,llme-serving-safety
 
-=== ROADMAP ===
-id: mlops-engineer
+=== ROADMAP ===id: mlops-engineer
+prerequisiteRoadmaps: machine-learning-engineer,devops-engineer,python
+relatedRoadmaps: ai-ml-engineer,machine-learning-engineer,devops-engineer,site-reliability-engineer
 type: profession
 title: MLOps Engineer
 description: Operationalize machine-learning workflows through reproducible pipelines, experiment tracking, model registries, deployment automation, and monitoring.
 level: Intermediate to Advanced
 estimatedHours: 170
 icon: workflow
-
 --- SECTION ---
 id: mlops-reproducibility
 title: Reproducible ML
@@ -577,135 +699,149 @@ id: mlops-operations
 title: Serving and Observability
 topics: mlops-deployment,mlops-drift-monitoring
 
-=== ROADMAP ===
-id: site-reliability-engineer
+=== ROADMAP ===id: site-reliability-engineer
+prerequisiteRoadmaps: devops-engineer,backend-developer,computer-science-fundamentals
+relatedRoadmaps: devops-engineer,cloud-engineer,mlops-engineer,backend-development
 type: profession
 title: Site Reliability Engineer (SRE)
 description: Improve service reliability through service-level objectives, observability, incident response, capacity planning, and automation that reduces operational toil.
 level: Intermediate to Advanced
 estimatedHours: 145
 icon: activity
-
 --- SECTION ---
 id: sre-foundations
-title: Reliability Foundations
-topics: sre-sli-slo,sre-error-budgets
-
+title: Reliability Engineering and Service Objectives
+topics: sre-sli-slo,sre-error-budgets,sre-service-level-indicators
 --- SECTION ---
 id: sre-observability
-title: Observability and Incidents
-topics: sre-telemetry,sre-incident-response
-
+title: Telemetry, Alerting and Incident Response
+topics: sre-telemetry,sre-incident-response,sre-alert-design
 --- SECTION ---
 id: sre-resilience
-title: Resilience and Capacity
-topics: sre-capacity-load,sre-automation-toil
+title: Capacity, Performance and Resilience
+topics: sre-capacity-load,sre-automation-toil,sre-resilience-patterns
+--- SECTION ---
+id: sre-engineering
+title: Production Readiness and Operational Learning
+topics: sre-production-readiness,sre-postmortem-learning,sre-chaos-testing
 
-=== ROADMAP ===
-id: network-engineer
+=== ROADMAP ===id: network-engineer
+prerequisiteRoadmaps: computer-science-fundamentals
+relatedRoadmaps: cloud-engineer,cybersecurity-analyst,devops-engineer,site-reliability-engineer
 type: profession
 title: Network Engineer
 description: Understand how networks are addressed, routed, secured, monitored, and troubleshot across local networks, enterprise environments, and cloud systems.
 level: Foundational to Intermediate
 estimatedHours: 125
 icon: network
-
 --- SECTION ---
 id: net-foundations
-title: Network Fundamentals
-topics: net-models-addressing,net-switching-routing
-
+title: Network Models, Addressing and Subnetting
+topics: net-models-addressing,net-ipv6-routing,net-subnet-design
+--- SECTION ---
+id: net-switching
+title: Switching, Routing and Network Architecture
+topics: net-switching-routing,net-vlan-wireless,net-routing-protocols
 --- SECTION ---
 id: net-services
-title: Core Network Services
-topics: net-dns-dhcp,net-transport-troubleshooting
-
+title: Transport, DNS and Network Services
+topics: net-dns-dhcp,net-transport-troubleshooting,net-load-balancing-vpn
 --- SECTION ---
 id: net-security
-title: Network Security and Operations
-topics: net-firewalls-segmentation,net-monitoring-automation
+title: Network Security and Segmentation
+topics: net-firewalls-segmentation,net-network-access-control
+--- SECTION ---
+id: net-operations
+title: Monitoring, Troubleshooting and Automation
+topics: net-monitoring-automation,net-packet-analysis,net-automation-config
 
-=== ROADMAP ===
-id: systems-programmer
+=== ROADMAP ===id: systems-programmer
+prerequisiteRoadmaps: c,computer-science-fundamentals
+relatedRoadmaps: embedded-systems-engineer,game-developer,software-architect,dsa
 type: profession
 title: Systems Programmer
 description: Develop software close to the operating system using memory-aware programming, process and thread APIs, file descriptors, system calls, and performance tools.
 level: Intermediate to Advanced
 estimatedHours: 170
 icon: cpu
-
 --- SECTION ---
 id: sysprog-foundations
-title: Runtime and Memory
-topics: sysprog-process-memory,sysprog-pointers-ownership
-
+title: C Runtime, Processes and Memory
+topics: sysprog-process-memory,sysprog-pointers-ownership,sysprog-c-runtime-abi
 --- SECTION ---
 id: sysprog-os
-title: Operating System Interfaces
-topics: sysprog-files-syscalls,sysprog-concurrency
-
+title: System Calls, Files and Concurrency
+topics: sysprog-files-syscalls,sysprog-concurrency,sysprog-ipc-signals
+--- SECTION ---
+id: sysprog-performance
+title: Native Debugging and Performance
+topics: sysprog-debugging,sysprog-profiling-benchmarking,sysprog-memory-diagnostics
 --- SECTION ---
 id: sysprog-quality
-title: Performance and Safety
-topics: sysprog-debugging,sysprog-build-portability
+title: Build Systems, Portability and Safety
+topics: sysprog-build-portability,sysprog-error-handling,sysprog-security-hardening
 
-=== ROADMAP ===
-id: embedded-systems-engineer
+=== ROADMAP ===id: embedded-systems-engineer
+prerequisiteRoadmaps: c,computer-science-fundamentals
+relatedRoadmaps: systems-programmer,game-developer,network-engineer
 type: profession
 title: Embedded Systems Engineer
-description: Build firmware for resource-constrained devices with microcontroller fundamentals, peripheral interfaces, real-time constraints, debugging, and dependable testing.
+description: Develop firmware for resource-constrained hardware using C, microcontroller architecture, electronics, peripheral drivers, real-time scheduling, debugging, verification, and secure device updates.
 level: Intermediate to Advanced
-estimatedHours: 175
+estimatedHours: 85
 icon: microchip
-
 --- SECTION ---
 id: embedded-foundations
-title: Hardware and Firmware Foundations
-topics: emb-mcu-architecture,emb-c-firmware
-
+title: Electronics, MCU and Firmware Foundations
+topics: embedded-electronics-digital-logic,emb-mcu-architecture,emb-c-firmware,embedded-toolchain-startup-linker
 --- SECTION ---
 id: embedded-io
-title: Peripherals and Real-Time Systems
-topics: emb-peripherals-buses,emb-rtos-scheduling
-
+title: Registers, Peripherals and Communication
+topics: embedded-registers-volatile-dma,emb-peripherals-buses,embedded-protocols-drivers
+--- SECTION ---
+id: embedded-realtime
+title: Real-Time and Power-Constrained Design
+topics: emb-rtos-scheduling,emb-power-security
 --- SECTION ---
 id: embedded-quality
-title: Debugging and Reliability
-topics: emb-debug-testing,emb-power-security
+title: Debugging, Verification and Device Lifecycle
+topics: emb-debug-testing,embedded-safety-verification,embedded-boot-update-diagnostics
 
-=== ROADMAP ===
-id: software-architect
+=== ROADMAP ===id: software-architect
+prerequisiteRoadmaps: backend-developer,computer-science-fundamentals,dsa
+relatedRoadmaps: systems-programmer,devops-engineer,cloud-engineer,site-reliability-engineer
 type: profession
 title: Software Architect
-description: Design systems by translating requirements into architecture decisions, component boundaries, interfaces, data flows, and operational trade-offs.
+description: Design and evolve software systems by translating requirements into architecture, defining boundaries and contracts, evaluating distributed and data designs, managing quality attributes, and guiding technical governance.
 level: Advanced
-estimatedHours: 130
+estimatedHours: 85
 icon: blocks
-
 --- SECTION ---
 id: arch-foundations
-title: Requirements and Boundaries
-topics: arch-quality-attributes,arch-domain-boundaries
-
+title: Requirements, Context and Boundaries
+topics: arch-system-context-stakeholders,arch-quality-attributes,arch-domain-boundaries
 --- SECTION ---
 id: arch-design
-title: Architecture and Communication
-topics: arch-styles-patterns,arch-api-contracts
-
+title: Architecture Styles and System Design
+topics: arch-styles-patterns,arch-system-design-distributed,arch-api-contracts
+--- SECTION ---
+id: arch-data-security
+title: Data, Security and Resilience
+topics: arch-data-architecture-integration,arch-security-resilience,arch-security-threat-modeling
 --- SECTION ---
 id: arch-governance
-title: Decisions and Evolution
-topics: arch-adrs-diagrams,arch-security-resilience
+title: Communication, Deployment and Evolution
+topics: arch-adrs-diagrams,arch-cloud-deployment-evolution,arch-governance-fitness-functions
 
-=== ROADMAP ===
-id: data-scientist
+=== ROADMAP ===id: data-scientist
+prerequisiteRoadmaps: python,computer-science-fundamentals,dsa
+relatedRoadmaps: ai-ml-engineer,machine-learning-engineer,data-engineer,data-analyst
 type: profession
 title: Data Scientist
 description: Use statistics, experimental reasoning, programming, and machine learning to investigate questions and communicate evidence-backed conclusions.
 level: Intermediate to Advanced
 estimatedHours: 165
 icon: chart-no-axes-combined
-
 --- SECTION ---
 id: ds-foundations
 title: Statistical Foundations
@@ -721,26 +857,29 @@ id: ds-communication
 title: Interpretation and Reproducibility
 topics: ds-uncertainty-communication,ds-reproducible-work
 
-=== ROADMAP ===
-id: devsecops-engineer
+=== ROADMAP ===id: devsecops-engineer
+prerequisiteRoadmaps: devops-engineer,cybersecurity-analyst
+relatedRoadmaps: devops-engineer,cybersecurity-analyst,cloud-engineer,site-reliability-engineer
 type: profession
 title: DevSecOps Engineer
 description: Integrate security checks into software delivery through threat modeling, dependency and secret scanning, infrastructure controls, and continuous verification.
 level: Intermediate to Advanced
 estimatedHours: 145
 icon: shield-check
-
 --- SECTION ---
 id: devsecops-foundations
-title: Secure Delivery Foundations
-topics: dso-threat-modeling,dso-secure-pipeline
-
+title: Secure Delivery Foundations and Threat Modeling
+topics: dso-threat-modeling,dso-secure-pipeline,dso-security-requirements
 --- SECTION ---
-id: devsecops-controls
-title: Code and Dependency Security
-topics: dso-sast-dependencies,dso-secrets-containers
-
+id: devsecops-code
+title: Code, Dependency and Artifact Security
+topics: dso-sast-dependencies,dso-software-composition,dso-artifact-signing
+--- SECTION ---
+id: devsecops-runtime
+title: Secrets, Containers and Infrastructure Policy
+topics: dso-secrets-containers,dso-iac-policy,dso-runtime-security
 --- SECTION ---
 id: devsecops-operations
-title: Verification and Response
-topics: dso-iac-policy,dso-vulnerability-response
+title: Verification, Vulnerability Response and Governance
+topics: dso-vulnerability-response,dso-security-testing,dso-compliance-evidence
+
