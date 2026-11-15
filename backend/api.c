@@ -332,7 +332,7 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
     // --- GET /api/topics/:id[/subpath] ---
     if (strcmp(method, "GET") == 0 && strncmp(path, "/api/topics/", 12) == 0) {
         const char *sub = path + 12;
-        char topic_id[64] = "";
+        char topic_id[128] = "";
         char action[32] = "";
 
         const char *slash = strchr(sub, '/');
@@ -433,8 +433,8 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
 
     // --- GET /api/path?from=X&to=Y ---
     if (strcmp(method, "GET") == 0 && strcmp(path, "/api/path") == 0) {
-        char from_id[64] = "";
-        char to_id[64] = "";
+        char from_id[128] = "";
+        char to_id[128] = "";
         get_query_param(query, "from", from_id, sizeof(from_id));
         get_query_param(query, "to", to_id, sizeof(to_id));
 
@@ -557,7 +557,7 @@ ApiResponse api_handle_request(AppState *state, const char *data_dir, const char
 
     // --- POST /api/progress ---
     if (strcmp(method, "POST") == 0 && strcmp(path, "/api/progress") == 0) {
-        char topic_id[64] = "";
+        char topic_id[128] = "";
         char status[32] = "";
 
         if (!extract_json_field(body, "topicId", topic_id, sizeof(topic_id)) ||

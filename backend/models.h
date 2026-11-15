@@ -11,7 +11,7 @@ typedef struct TopicResource {
 } TopicResource;
 
 typedef struct Topic {
-    char id[64];
+    char id[128];
     char title[128];
     char roadmapId[64];
     char type[32]; // "standard" or "subroadmap"

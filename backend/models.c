@@ -422,7 +422,7 @@ AppState *models_init(const char *data_dir) {
     // Build Roadmap & Section graph edges
     for (size_t i = 0; i < state->roadmap_count; i++) {
         Roadmap *r = state->roadmaps[i];
-        char prev_topic_id[64] = "";
+        char prev_topic_id[128] = "";
 
         for (size_t s = 0; s < r->section_count; s++) {
             RoadmapSection *sec = &r->sections[s];

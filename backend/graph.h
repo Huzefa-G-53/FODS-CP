@@ -21,13 +21,13 @@
  */
 
 typedef struct GraphEdge {
-    char target_id[64];
+    char target_id[128];
     char edge_type[32]; // "prerequisite", "subroadmap", "concept-link", "stage-next", "related"
     double weight;
 } GraphEdge;
 
 typedef struct GraphVertex {
-    char id[64];
+    char id[128];
     char label[128];
     char node_type[32]; // "topic", "section", "roadmap", "stage", "concept"
     LinkedList *outgoing_edges; // LinkedList of GraphEdge*
